@@ -1,0 +1,8 @@
+apiVersion: v2
+name: metrics-server
+version: 0.0.1
+
+dependencies: # A list of the chart requirements (optional)
+  - name: metrics-server
+    version: 3.12.1
+    repository: https://kubernetes-sigs.github.io/metrics-server/
