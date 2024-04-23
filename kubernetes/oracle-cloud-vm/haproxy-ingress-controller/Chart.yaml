@@ -1,0 +1,8 @@
+apiVersion: v2
+name: haproxy-ingress-controller
+version: 0.0.1
+
+dependencies:
+  - name: kubernetes-ingress
+    version: 1.39.1
+    repository: https://haproxytech.github.io/helm-charts

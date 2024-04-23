@@ -1,0 +1,10 @@
+---
+kubernetes-ingress:
+  controller:
+    replicaCount: 1
+    ingressClass: null
+
+    service:
+      type: LoadBalancer
+      loadBalancerClass: io.cilium/node
+      externalTrafficPolicy: Cluster

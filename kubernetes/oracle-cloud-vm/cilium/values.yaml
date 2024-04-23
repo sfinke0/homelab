@@ -1,0 +1,12 @@
+cilium:
+  operator:
+    replicas: 1
+
+  # https://docs.cilium.io/en/latest/network/node-ipam/
+  # this requires cilium 1.16.0 which is not stable yet
+  nodeIPAM:
+    enabled: true
+
+  ipam:
+    operator:
+      clusterPoolIPv4PodCIDRList: 100.64.0.0/16

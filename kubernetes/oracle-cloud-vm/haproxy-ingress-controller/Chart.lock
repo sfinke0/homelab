@@ -1,0 +1,6 @@
+dependencies:
+- name: kubernetes-ingress
+  repository: https://haproxytech.github.io/helm-charts
+  version: 1.39.1
+digest: sha256:bd06edae34e1e1c572ab3146a9da10cafc2307a30299f0be8d834d10eec8ec3c
+generated: "2024-04-23T22:24:29.224214341+02:00"
