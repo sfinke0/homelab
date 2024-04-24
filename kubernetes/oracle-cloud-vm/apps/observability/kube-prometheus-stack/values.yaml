@@ -1,0 +1,15 @@
+---
+kube-prometheus-stack:
+  grafana:
+    enabled: false
+
+  prometheus:
+    prometheusSpec:
+      retention: 10y
+      storageSpec:
+        volumeClaimTemplate:
+          spec:
+            storageClassName: local-path
+            resources:
+              requests:
+                storage: 40Gi

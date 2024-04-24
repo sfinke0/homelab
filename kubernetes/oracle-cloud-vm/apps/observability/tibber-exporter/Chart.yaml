@@ -1,0 +1,8 @@
+apiVersion: v2
+name: tibber-exporter
+version: 0.0.1
+
+dependencies:
+  - name: tibber-exporter
+    version: 3.6.4
+    repository: https://terjesannum.github.io/tibber-exporter/
