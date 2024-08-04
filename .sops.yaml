@@ -2,7 +2,7 @@
 creation_rules:
   - path_regex: kubernetes/.+\.secret(\.sops)?\.ya?ml
     input_type: yaml
-    #encrypted_regex: ^(data|stringData|tibberToken)$
+    encrypted_regex: (?i)^(data|stringData|.*(token|password).*|liveMeasurements)$
     mac_only_encrypted: true
     key_groups:
       - age:

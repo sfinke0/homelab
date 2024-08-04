@@ -2,3 +2,4 @@
 # Chart dependencies
 **/charts/*.tgz
 key.txt
+.secret.yaml

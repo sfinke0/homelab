@@ -109,7 +109,7 @@ argocd-apps:
             targetRevision: *revision
             helm:
               valueFiles:
-                - secrets://values-enc.yaml
+                - secrets://values.yaml
           syncPolicy:
             automated:
               prune: true
