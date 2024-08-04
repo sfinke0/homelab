@@ -2,23 +2,21 @@ grafana:
     grafana.ini:
         server:
             # sops:enc
-            domain: ENC[AES256_GCM,data:OemAErKeg0Qw2XiFR7Oi8xMGzEicaw==,iv:a1oxwmV78sxy6wK4fWnjir3JFXveGLIHa1YsEDJjaHI=,tag:18ePhCFLzo5EZBOKEyfjpg==,type:str]
+            domain: ENC[AES256_GCM,data:8i3yplHiT6OOrSxWHf2rG02q1npxJg==,iv:J1Lt4XiuLNJYGDq378MBmW2V4HKvysFL9D4zaHmEncw=,tag:9D43riMeNMq7PMOVhp/LPA==,type:str]
             root_url: '%(protocol)s://%(domain)s'
     persistence:
         enabled: true
     ingress:
         enabled: true
         annotations:
-            # sops:enc
-            external-dns.alpha.kubernetes.io/hostname: ENC[AES256_GCM,data:lY413hfVhTB1R4wVRN2YncUKYdFZ5g==,iv:WNbV24MX/8oy2MxQsttxUshfByJ+yI4T9nsl7nCo1ig=,tag:wp7VcLZUGNk7EbY+RzEBKA==,type:str]
-            cert-manager.io/cluster-issuer: letsencrypt-staging
+            cert-manager.io/cluster-issuer: letsencrypt-prod
         hosts:
             # sops:enc
-            - ENC[AES256_GCM,data:PuYMLctxupkoVdL0BQadvYUsbTappg==,iv:TLSPCgrZX2H2GxoJej9zwHAKXW1hvGEhaFUg4H9ThyI=,tag:RryecUEIEFFITXXfCAl2Bg==,type:str]
+            - ENC[AES256_GCM,data:Ke/ZkA+iPs7MIzt+e6tLd0hNYW4f7A==,iv:uSTa0R/cwp5Cu363GceURTOxdIyf+lMlDJlEi4uvXEQ=,tag:RHxvWYhYj1XWMuasuj9Dsw==,type:str]
         tls:
             - hosts:
                 # sops:enc
-                - ENC[AES256_GCM,data:wh7PMsLwDmerwKz3mrPM5FfgYCBNrQ==,iv:o5ETGtBT5+2oc4oF7TXNtHWKhEU3TmMrOV5AM8HWQ4s=,tag:PUbZc/lc4xBz+gq/fLAEcQ==,type:str]
+                - ENC[AES256_GCM,data:SLpd9ijlVHkUZl8mAEpGLk+YAclhhw==,iv:nU7DLxyZPSGOmstLFrL0XvuCBUhcpBXHIhbx0cbgf8M=,tag:IQPPArpJfTIB4GXDSVbnYg==,type:str]
               secretName: grafana-cert
 sops:
     kms: []
@@ -29,14 +27,14 @@ sops:
         - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBiS0JVTG5Xb1VKdmpyRmNM
-            eHhjYnhMR3p2cmRBNVA5ZDE3U0ZmM01ybGwwCk0vYjlKT1dYVFd0c0VGNUx0ZlNB
-            M21FZS9uQmVpMlIzMmluNGRaNXhCQWsKLS0tIGxwOWVSN1VMN1VvbE9SUkMwY3FO
-            U0JJMWdlNmtxU1ZIMFg4QlNJL3llUkkKjyKKBtCB3Obt/ekPPA7/YS3yZZlWIZYY
-            t9sJ0KXUIlctQ+lIuNpQk3XniQ67FgGNMPP6nS2jR/cnRv4kWBIkMA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBsTklPTTFYQU9WUUxnUkx2
+            Y3BybFFwWWUwQk1jQ29yby9uRm9lK2VsZTEwCk12TVZyQnM5ZVVRc2lqZjU0ekpp
+            ck5pTjF5YXRZSUZyZTZoZ1BvUDFUSjAKLS0tIFhjZ3RKbENJNElGZ2FGUGtkQmZX
+            b1BmRTFtZ0s5OU41K0c2UWdxMHNZaUkK9iYialrMr0Wye9j1wxzVV6g+1VBdGywW
+            9+jpz7snJY0tUW79uwasMkAtuQSoPEuJqGTDo2bRV2np/X9pojN2kQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-08-04T19:04:48Z"
-    mac: ENC[AES256_GCM,data:6En6+G18Rv/aIUd1tMT06Hdy0TOHFXpBIqNwV2IWVY8RqwuXnY2hb+x66O2XUJ78B0ADqtmafH8C6XK2j9fcJf+uqFR7fLvWjiS9emF6Ly795byb0rNcal4X1KOmJA0ELoLVn7OJzdyLSuOpA5f3pUE1UoTHjUyfk+jtKCieXjI=,iv:3JK8AEx7bzjIzJ4csSxkueVM/tc9o2u2ySxJMzM/q/U=,tag:X2tpv2HeiXzncUEpCl068A==,type:str]
+    lastmodified: "2024-08-04T19:11:41Z"
+    mac: ENC[AES256_GCM,data:LwcCcS1yrYuImHP830/fJye0uk2IjjYngIbRwBsCI98HPL0sQDFv+ybWxbZPuUshV0csS0PhdmUznZlBKVN6Jn2y7B7zwRjrg2nAhTYYWJjFjKI6PnB8djpQgdGVK1THIgXCx3GAfEibyxKAfwULKLrUKsB+3ZOqaNt0qAhO1Fs=,iv:u075v7YrKOC6TAfgLe4mhZoTd+xCIEohZFlBvCpw0os=,tag:3b61nAJ5yvS/ScFmScBqWA==,type:str]
     pgp: []
     encrypted_comment_regex: sops:enc
     mac_only_encrypted: true
