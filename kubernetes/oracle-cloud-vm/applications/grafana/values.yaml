@@ -2,7 +2,7 @@ grafana:
     grafana.ini:
         server:
             # sops:enc
-            domain: ENC[AES256_GCM,data:8i3yplHiT6OOrSxWHf2rG02q1npxJg==,iv:J1Lt4XiuLNJYGDq378MBmW2V4HKvysFL9D4zaHmEncw=,tag:9D43riMeNMq7PMOVhp/LPA==,type:str]
+            domain: ENC[AES256_GCM,data:5HcRJ4rzdl0lSMuuXFvtKBRCLCHhZQ==,iv:wFTw6EyHHSSRM2Lp3E0BF0aAHmwYrH5J9Ja/phiLoB0=,tag:oiSLtJEw1E3jvvR1kU3UJQ==,type:str]
             root_url: '%(protocol)s://%(domain)s'
     persistence:
         enabled: true
@@ -10,13 +10,14 @@ grafana:
         enabled: true
         annotations:
             cert-manager.io/cluster-issuer: letsencrypt-prod
+            haproxy.org/forwarded-for: "true"
         hosts:
             # sops:enc
-            - ENC[AES256_GCM,data:Ke/ZkA+iPs7MIzt+e6tLd0hNYW4f7A==,iv:uSTa0R/cwp5Cu363GceURTOxdIyf+lMlDJlEi4uvXEQ=,tag:RHxvWYhYj1XWMuasuj9Dsw==,type:str]
+            - ENC[AES256_GCM,data:DN1p89bmwuRpHOFl8xEf6w9CaVbfPw==,iv:Ivt3j0LsdpBMtkEkRI0JvvUsiAck7VUXVPmXfhSdVLk=,tag:gT3vCmr4i5ll6mUBi08rnA==,type:str]
         tls:
             - hosts:
                 # sops:enc
-                - ENC[AES256_GCM,data:SLpd9ijlVHkUZl8mAEpGLk+YAclhhw==,iv:nU7DLxyZPSGOmstLFrL0XvuCBUhcpBXHIhbx0cbgf8M=,tag:IQPPArpJfTIB4GXDSVbnYg==,type:str]
+                - ENC[AES256_GCM,data:hoKDlWb5f4uwS4LmGkGN/f+Zdi8nog==,iv:q5Sd85V8BgdC5uOWbgzAgxZweWVjERxYTnTRelkt5ss=,tag:7hdNj7DYobMJ30dLO/USLg==,type:str]
               secretName: grafana-cert
 sops:
     kms: []
@@ -27,14 +28,14 @@ sops:
         - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBsTklPTTFYQU9WUUxnUkx2
-            Y3BybFFwWWUwQk1jQ29yby9uRm9lK2VsZTEwCk12TVZyQnM5ZVVRc2lqZjU0ekpp
-            ck5pTjF5YXRZSUZyZTZoZ1BvUDFUSjAKLS0tIFhjZ3RKbENJNElGZ2FGUGtkQmZX
-            b1BmRTFtZ0s5OU41K0c2UWdxMHNZaUkK9iYialrMr0Wye9j1wxzVV6g+1VBdGywW
-            9+jpz7snJY0tUW79uwasMkAtuQSoPEuJqGTDo2bRV2np/X9pojN2kQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzNEF4eXdEMTc0R29zNE9t
+            OHNaSXNHZ1hoVDJ4T3NNajNISDU5TzlKdWdRCmNxVzEra1hyY3FHT0NPUmplNHB0
+            ekFUOHBpYkNZT0pFdENCUFhLRmFydk0KLS0tIHpoTjdTaG1KZzBqU0l6a3dzQjUv
+            R1FXVmNrdElpb2ZGU05sZXFvRlh2NGsK0FYXnSM26HTVSz99Ndo8ISWatD2YUDS2
+            zzwaTwPyA7KK5Ty58hoGPAbItOaUryi5yuyP47DxrFw3SXaj6b41RA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-08-04T19:11:41Z"
-    mac: ENC[AES256_GCM,data:LwcCcS1yrYuImHP830/fJye0uk2IjjYngIbRwBsCI98HPL0sQDFv+ybWxbZPuUshV0csS0PhdmUznZlBKVN6Jn2y7B7zwRjrg2nAhTYYWJjFjKI6PnB8djpQgdGVK1THIgXCx3GAfEibyxKAfwULKLrUKsB+3ZOqaNt0qAhO1Fs=,iv:u075v7YrKOC6TAfgLe4mhZoTd+xCIEohZFlBvCpw0os=,tag:3b61nAJ5yvS/ScFmScBqWA==,type:str]
+    lastmodified: "2024-08-04T19:21:53Z"
+    mac: ENC[AES256_GCM,data:kAHM9/zYL/X19bIHFfe5HEnSSuJ+ICTCP6vX21vhsQto31ljof9jp9rQ1kamV/QPecSQSsC+vzfbCIEBC23OcGcy3kSTVXYwSnsN5fuD+hPgDVgPoo6dPQWBt1zaIXa1Ysfe/zsgO2q/IsNE49KHUkLy+3UosEhryMKWBMPmjf4=,iv:phYwpibjQ0hrvLIloXhV5PvWHbM9e4GKCdlmTAB7+BY=,tag:Ey0Xcr1sKpZkM2g/S0oxFA==,type:str]
     pgp: []
     encrypted_comment_regex: sops:enc
     mac_only_encrypted: true
