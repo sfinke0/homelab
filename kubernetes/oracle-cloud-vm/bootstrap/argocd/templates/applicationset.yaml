@@ -7,23 +7,34 @@ spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
-  - git:
-      repoURL: https://github.com/sfinke0/homelab.git
-      revision: HEAD
-      directories:
-      - path: kubernetes/oracle-cloud-vm/applications/*
+    - git:
+        repoURL: &repoURL https://github.com/sfinke0/homelab.git
+        revision: &revision main
+        files:
+          - path: kubernetes/oracle-cloud-vm/applications/**/config.json
   template:
     metadata:
       name: '{{.path.basename}}'
     spec:
-      project: "my-project"
-      source:
-        repoURL: https://github.com/argoproj/argo-cd.git
-        targetRevision: HEAD
-        path: '{{.path.path}}'
       destination:
-        server: https://kubernetes.default.svc
-        namespace: '{{.path.basename}}'
+        name: in-cluster
+        namespace: '{{.namespace}}'
+      project: default  # TODO
+      source:
+        repoURL: *repoURL
+        path: '{{path}}'
+        targetRevision: *revision
       syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        retry:
+          limit: 10
+          backoff:
+            duration: 1m
+            factor: 2
+            maxDuration: 16m
         syncOptions:
-        - CreateNamespace=true
+          - CreateNamespace=true
+          - ApplyOutOfSyncOnly=true
+          - ServerSideApply=true
