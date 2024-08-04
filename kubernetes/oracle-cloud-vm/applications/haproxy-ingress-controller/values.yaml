@@ -2,7 +2,7 @@
 kubernetes-ingress:
   controller:
     replicaCount: 1
-    ingressClass: ~
+    ingressClass: false
     ingressClassResource:
       default: true
 
