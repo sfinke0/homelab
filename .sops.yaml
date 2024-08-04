@@ -2,8 +2,9 @@
 creation_rules:
   - path_regex: kubernetes/.+\.secret(\.sops)?\.ya?ml
     input_type: yaml
-    encrypted_regex: (?i)^(data|stringData|.*(token|password).*|liveMeasurements)$
+    #encrypted_regex: (?i)^(data|stringData|.*(token|password).*|liveMeasurements)$
     mac_only_encrypted: true
+    encrypted_comment_regex: "sops:enc"
     key_groups:
       - age:
           - age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k

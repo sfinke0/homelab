@@ -1,7 +1,9 @@
 tibber-exporter:
-    tibberToken: ENC[AES256_GCM,data:zKHgbmhuvRVtyN8dSLbpU2M/jPHWbgSsV28G8TgOpF1sAe+uzB1zU3TWjw==,iv:zE3EQz0OB06dQW306UAg2A8z04BSISAS00ZvbaOGRQg=,tag:7/4m8WsZkSYA9sv7WzurHw==,type:str]
+    # sops:enc
+    tibberToken: ENC[AES256_GCM,data:TJeX69K7UPkKmPLH8UX0sLlhAaO3BVxlIzwZBZcgVgtR/IdleafUJ3KG1A==,iv:PHxUdlf2XoFQLwaLjMQef2LWE9yrSwNi0IpN7mw2wyI=,tag:mXZZ4BU6GXuSfW/K/Y0fQg==,type:str]
     liveMeasurements:
-        - ENC[AES256_GCM,data:nHj38/wMy+qBxAwSVgqvegnORJ8RUFUP6mDZzKGXRBqDhmy9,iv:KeD6oHdJJcLSdSLBp9zir8gZJfrwMdOUrDcdGLydRy4=,tag:PZGE97Q1qR3N16CO3rU4fQ==,type:str]
+        # sops:enc
+        - ENC[AES256_GCM,data:sBWuLEb4nYAR7hCc9yLKcGEYWu+VB/dJy8ujJpnJ4YjWh3Pl,iv:hkIsgAuE40DT9V8cKQyNWuDu5mzkrevVEbZqYHCTSng=,tag:ybmRY45qo6l+fLKtHpNMjQ==,type:str]
     serviceMonitor:
         enabled: true
         interval: 5s
@@ -17,15 +19,15 @@ sops:
         - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBmNW5HVzRkZmtjOUMzc3dY
-            TS9ySnZ5aGpKcW0wRlZCdmg2YkptdVBGTmpBCi9LR3l5eHliN1ZBRmNwRUw3cUsz
-            N2VrcFg1TmxvSnlDRHVDQlFXUjJPd0kKLS0tIGs2NGF5amZ5aXl5Q2drUUl4aGNW
-            dkIvd0R4VWZvS2J5dEQxa1lKTkNBWG8KXyVG0PoYgoXuNOZjqWMlUAU73brpyXv9
-            z2dm2utuCKaZEcjj2L6rhoGYkTjtBoQYAgni3Zy7IRF6uq7mPoE3ig==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA3cjBPUjN0RTJjK0RkSm1a
+            QUFVKy9UeUthM00ybGxXaGNMN3lOZm1yTXowCmNWbGY0SmtoKzBSMk1LQTVsL0N4
+            L09CenN2LzAxczdyQ2hjL3ZiSmk5R3MKLS0tIE1VRUxlMWFZWjZNQ3QyOXRXK1kv
+            YmpVUEVZeEo2c25EMHdMTXNpTHJ2NEEKefs1tAbpwiJX+UfFwv1unJiicHBEVqf2
+            1V+xGQfG2QrwICATQe1YvZ9cBIvKsY7hFeZNRmWEGTX6t6jym7fYhQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-08-04T15:14:23Z"
-    mac: ENC[AES256_GCM,data:2I72X54mfTeOnhr1wFFiR6WDKU0+YgpZQAQnslGkY2684xe/jluIai5cHhMJv0l8Kt0qqLYQQwg91hTZZp/8jMR7Q+Da4VK24lrxEYGZw4crfEF8PZ6Vmbmi/t0DSVSB5OCEhp+YOsO6NW83h7fNY9dnpyvthMB2EERGuu1Ltrs=,iv:FoGcHB37lLfzfkCDSe3lwZYWoo0eEwoVIfa6Vxy6qbU=,tag:SByNiD2sXSy2ydP1GDFjWg==,type:str]
+    lastmodified: "2024-08-04T15:52:24Z"
+    mac: ENC[AES256_GCM,data:7XE6HQJ9AdqvXHclTuemZUzdakuv2cD6voKpU9Mn2AhaHVWeYyphIUlioLrVpMPIE0kT2vGVLXwkT07637m4uukAgDD36EVxOtxpahNdqTU/J8SejpQeEMkraAjH2n3WCBu07yPuQcSOxlAdwf9lOt8HmMTuutjyYCsSszX53RQ=,iv:tI1hFY/auPghO9yPzJWbmSzY3DjEXIqF10/dAhQ37l8=,tag:g4RZRoAtmVHrtM4ZQACPYg==,type:str]
     pgp: []
-    encrypted_regex: (?i)^(data|stringData|.*(token|password).*|liveMeasurements)$
+    encrypted_comment_regex: sops:enc
     mac_only_encrypted: true
     version: 3.9.0
