@@ -1,0 +1,28 @@
+external-dns:
+    provider:
+        name: cloudflare
+    env:
+        - name: CF_API_TOKEN
+          # sops:enc
+          value: ENC[AES256_GCM,data:64bPFgXQQcKjAzXaZkDe8CLz3VEiPytKyFWypxPkpPFj3pj4ikoAzA==,iv:YqCDY8+u4mUOnrI4WW9zpByTaBDrKtv6O95vFJ7ddEc=,tag:Pt3LpTLPze0VQG8qTYJWdQ==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBUlZSNjA5cnFqbnFyaEJj
+            aGJJa2FnREJOaE1rbjY2cjB6cWVXZjgzd0hBCnplN20rSVRRZkJXWVF3eVREbEpO
+            VVdORERVbXFFL1ZBbHduMllidUdyRWcKLS0tIFRuSzF0MDFDRHR2VmFkTGZ2ZGtt
+            K2NtUGFrSjdaZ0I0d2liZDV2WkIxOVUKFCngbs5YyDkk54O44AG5LVVsVSrrMCXZ
+            3/NGNvyJtd3ZI1v3cUPi4oeKfqtfwEckXK6srlMy3nyWYI8Yst2+Ug==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-08-04T15:51:17Z"
+    mac: ENC[AES256_GCM,data:S/Ro7Jub+mCQsq+ZxAkyBtKx2z6y9aco2udOyZwfA9jjG4PnNNNsuhw0J3uCT/zmxbXlK3ANqYRpakCFAJzFfil18R8qWV0Qicmozn9ImmzkI1KMRCRMK4mUNUtPD5EF3myvdW7kiZBtEkjwEDuMlEdUWWu2kEJGdJ2jbRPjM6M=,iv:OPUhbhMwDjWukuVQ9TTGRKx3EKCcpcp/bemm6jiXaiE=,tag:2sERZAAMdKVNLH+XGoo7AQ==,type:str]
+    pgp: []
+    encrypted_comment_regex: sops:enc
+    mac_only_encrypted: true
+    version: 3.9.0
