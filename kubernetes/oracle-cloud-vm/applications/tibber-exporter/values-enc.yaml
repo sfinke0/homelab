@@ -1,0 +1,31 @@
+tibber-exporter:
+    tibberToken: ENC[AES256_GCM,data:8tx/9lrRE2JeckLDccrUSJaV/huk+1S5s7+EurUT7O/N2r0s1rJftaSJQw==,iv:wMlUy8W1U4AHlNgJZFWDObqkxMCJB2K2T5pZs4yFTQs=,tag:IJmeRLvOqKUHgOVcVQQcAw==,type:str]
+    liveMeasurements:
+        - ENC[AES256_GCM,data:eO3sgGuqlt+7lsFl8i3aEVWu2PpdhOvVC7nkh6IHhN0usp7q,iv:JwCSm69DN3jY1JEpksvNzV0NGRkdoYHA+Wz8bONQ4AE=,tag:+hIakUxNo3oIO/N37bde8g==,type:str]
+    serviceMonitor:
+        enabled: ENC[AES256_GCM,data:ZznGqg==,iv:Ddhm6CR/kWQlYDxPoqS7SfFd91o3cODBBlybDeN2mJk=,tag:vL8yIrZf1WXOLCS1ktpcgA==,type:bool]
+        interval: ENC[AES256_GCM,data:SRY=,iv:hYasli441LNpavZ9Z4x3uT2VADhDpkdSBCjgimDN/64=,tag:/MHfHl257g9kcsXVWH02pA==,type:str]
+        labels:
+            release: ENC[AES256_GCM,data:4LGMXt7mgoNThASGbOllDFMPi1Du,iv:8BzCCtMRO6f3T+/Ew1J0eRBireAK67gBbWJFo1Apm8M=,tag:PeZV3lDTUn3ucFqKZJBGIQ==,type:str]
+    fullnameOverride: ENC[AES256_GCM,data:z6xdOwllvxKQBxaZK6Hs,iv:d9twP+kKPam72Wdmse0E/2FiSk7lfXeE1QigfgDiDho=,tag:ZNCdLU2ewLzVCgG8JFzaZA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBxazNzeVA4RkJaQzFNTWFm
+            UlMvV0xHcHF6Q2hCODdMNWgxQXJtTDZ0K2pVCnR0WGpIeVViaXc2UkxNdlNOZEZl
+            QTQwNFU5R0d6VXBoSklwZC9IU08zK2sKLS0tIEsyVllxSnE1V3N5MTRsTTg4NXk4
+            RW5tQUF1UlFRTGM4UGFRMTcyNW52SkEKlVTlKba2IOa3u+tpnh89roN0KXrA28V5
+            YPvwZI6+NVchgySEhhTNFfUBi/rHJ9LhvBjb3GVjkdP1Y2dCgNV6VQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-08-04T14:57:29Z"
+    mac: ENC[AES256_GCM,data:fd8QINxWTtD9MEF6nlUQJTBaFCK0SAkTHg/oiQXUrnhrQyMUuEgboGj7cU7qv7tENS9/vuTakNmNVuo5OJl9E+lZ+f1nApSdzFQLQZ/Mje+wYhlQbmrdzi+3IYgk8+cRnxNWSHSVR+dJcOpcX6SUmsLwo+FeZnjteykUUwBLiSY=,iv:QRVpMWsKeqZMhERV1jyKbZa4UG5DylXRwGHENsNP53g=,tag:HZgScUKdb6I98elSN+LoQw==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    mac_only_encrypted: true
+    version: 3.9.0

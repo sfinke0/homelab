@@ -107,6 +107,9 @@ argocd-apps:
             repoURL: *repoURL
             path: '{{.path.path}}'
             targetRevision: *revision
+            helm:
+              valueFiles:
+                - secrets://values-enc.yaml
           syncPolicy:
             automated:
               prune: true
