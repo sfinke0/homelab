@@ -4,7 +4,10 @@ external-dns:
     env:
         - name: CF_API_TOKEN
           # sops:enc
-          value: ENC[AES256_GCM,data:64bPFgXQQcKjAzXaZkDe8CLz3VEiPytKyFWypxPkpPFj3pj4ikoAzA==,iv:YqCDY8+u4mUOnrI4WW9zpByTaBDrKtv6O95vFJ7ddEc=,tag:Pt3LpTLPze0VQG8qTYJWdQ==,type:str]
+          value: ENC[AES256_GCM,data:AjZnZ085iQ6NJWdw2bK3//AfoVIhXTAxKXwInmhl+CeBBWKedxfgiw==,iv:AuQBNqJR1HkqyDMlGjB4XrxDvfqKkAprkl739XJdTcE=,tag:78xSjDPSj7p8FPoIIFTXDg==,type:str]
+    extraArgs:
+        # sops:enc
+        - ENC[AES256_GCM,data:gP3fasBgdUFpDkONrxoVQ1WOM2MCCMGtmHMqnSAYKH8=,iv:nOD1Py25qC9G+VE19DJgBAcZoEo7NVVpYqOojl/7h2k=,tag:KHRuUWhekxmfLNjTz0Buwg==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -14,14 +17,14 @@ sops:
         - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBUlZSNjA5cnFqbnFyaEJj
-            aGJJa2FnREJOaE1rbjY2cjB6cWVXZjgzd0hBCnplN20rSVRRZkJXWVF3eVREbEpO
-            VVdORERVbXFFL1ZBbHduMllidUdyRWcKLS0tIFRuSzF0MDFDRHR2VmFkTGZ2ZGtt
-            K2NtUGFrSjdaZ0I0d2liZDV2WkIxOVUKFCngbs5YyDkk54O44AG5LVVsVSrrMCXZ
-            3/NGNvyJtd3ZI1v3cUPi4oeKfqtfwEckXK6srlMy3nyWYI8Yst2+Ug==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAwbFFUdWtIUFZhTWNieG11
+            NkVmSm4vRFFVZU5jZXpaSlV3Z3hFdlFpWHcwCnJEcnlWME8vT3RrVFdHclZmWE9r
+            ejdQdUh5aVR2dXJSRUFFekZiMnZTNUkKLS0tIFp1WCtRczgzUDVlTVFOMDhkYjly
+            QkdrY3NjTDVzQUV1bFMwSlpNNDhHWnMKFUfts1H1cUl+MXTdFKQ3+6R2YQxi5AGD
+            D/HnQZX6Ou3Ds9XBwGz8BBis7nWZNP6VE7t4LgTWUoE4rCZ/3mi6BQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-08-04T15:51:17Z"
-    mac: ENC[AES256_GCM,data:S/Ro7Jub+mCQsq+ZxAkyBtKx2z6y9aco2udOyZwfA9jjG4PnNNNsuhw0J3uCT/zmxbXlK3ANqYRpakCFAJzFfil18R8qWV0Qicmozn9ImmzkI1KMRCRMK4mUNUtPD5EF3myvdW7kiZBtEkjwEDuMlEdUWWu2kEJGdJ2jbRPjM6M=,iv:OPUhbhMwDjWukuVQ9TTGRKx3EKCcpcp/bemm6jiXaiE=,tag:2sERZAAMdKVNLH+XGoo7AQ==,type:str]
+    lastmodified: "2024-08-04T18:58:23Z"
+    mac: ENC[AES256_GCM,data:Jv4R0yaEfKxq9ypItrhCVhYSlQ2slLJTw4mJEq16bDWBvXFCQP1dxtLil+i8Ns5taRYAo0FhcTFnhg8caLwcChNsCTwiGEq53ZSyG5CKVkKcRVPn0dJGEuk7QmXBMiQlF9i3Do3j/5Vmr7Nk5VenlfE2zX2i/Y2BjPJXnO/u5ow=,iv:iCUctsERArEIa+IPOI4UKHqxSl7xQtoIfALvCSVOE00=,tag:kmVU8ShZNL5iARLgrwtWmA==,type:str]
     pgp: []
     encrypted_comment_regex: sops:enc
     mac_only_encrypted: true
