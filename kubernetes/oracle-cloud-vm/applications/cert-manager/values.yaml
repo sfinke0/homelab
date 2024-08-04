@@ -1,3 +1,28 @@
+# sops:enc
+cloudflare_api_token: ENC[AES256_GCM,data:K9tnihTPtJUHc5kOSTD0G7i8QuxjB7BrqVJBNNkRTqspeallsS9b8w==,iv:bYH8A419CHlH2aHo/orPjgXLqWPnu3jFYe1i/jUggns=,tag:LrriMqwlQcSKCEuazhYdJw==,type:str]
+# sops:enc
+cluster_issuer_email: ENC[AES256_GCM,data:eH7mNFO+GMQ+XRN6EOCmvFHJPDuGKK7xhw==,iv:UhfKSzZkmKn5kDWaiETI9Rd/lxfqSpwKy85FlD2+n0c=,tag:dEEWXBXGzzJuyZ1X8ELb4A==,type:str]
 cert-manager:
-  crds:
-    enabled: true
+    crds:
+        enabled: true
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBQN1k0bmFuTEF5U0pXZGl0
+            Ky9FNzcrUCs0cHY0eE9KdkVQUlJkWDJ1Z1RZCnkrOU90RlBOTzdIS3lrUFozVjNn
+            RnpnNE9MSXRHTHZWeFVYcGZTUThlaU0KLS0tIDFvZFhydTF5ODJsdkM4UEZObnhU
+            RjM4aWV6R2k5SXU4eC9iM0FHMldkajgKQ2X6PO6UGIMvofULcneVk5mSQcC/zOs2
+            vvDGexEE+MqFWZSrkMnokGR2cUr+RU9vfySMxY2BZgP+gc9jlHN8iQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-08-04T16:39:22Z"
+    mac: ENC[AES256_GCM,data:sTAlCbGs04+xZha4wGd1Gl9AdEGfhS4W+o5UoEKdkhszmOoxoWauZCV8nbjO6/vOupIGR1Er9MyipOkXA75muYsDsRycD1xz2HZrUpnSrWcZqjJ1oqtj8vbFeyx/kTs4sLdEyEIxJJ8c6qVWUWxCTh9BEyDJDQWi769yWuenwgs=,iv:xEhThapCEgl7gJShswleR43TluBRF6S8fL+7wR7a7Fs=,tag:oduRjzAB5rcWtb9x1tmIcw==,type:str]
+    pgp: []
+    encrypted_comment_regex: sops:enc
+    mac_only_encrypted: true
+    version: 3.9.0
