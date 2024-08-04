@@ -1,0 +1,41 @@
+grafana:
+    grafana.ini:
+        server:
+            # sops:enc
+            domain: ENC[AES256_GCM,data:r7YflreMmc6jgXJJLu0sTfSBFnKYpQ==,iv:O68pN2DJLoo/sJRLF931Ci3V4agme3v+2hGG2f6JzWc=,tag:EqOLWTruCaopzy1DwdvamA==,type:str]
+            root_url: '%(protocol)s://%(domain)s'
+    persistence:
+        enabled: true
+    ingress:
+        enabled: true
+        annotations:
+            cert-manager.io/cluster-issuer: letsencrypt-staging
+        hosts:
+            # sops:enc
+            - ENC[AES256_GCM,data:Z+xCsyJSZhqAEN3ER7EB9ITzjJjS6A==,iv:tOoNtGmmVMfB2Mn870cKD0QB/uBFKZiW5BAA0l/ZRFw=,tag:+Jhv3Gla3+Dwc2D/Dt13jg==,type:str]
+        tls:
+            - hosts:
+                # sops:enc
+                - ENC[AES256_GCM,data:o6LuZOjrtWUmMERfWhZsYoiOXW6DGQ==,iv:d4KU8h9PC0rpj5oVFrGw/hEEGryGxHSv6ypYLMGkuv4=,tag:T4he/WNOGMOPkKIJbtjzWA==,type:str]
+              secretName: grafana-cert
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA2UkxNZE1yMGhkdHhiZE9p
+            TEUxc0QzR2J6WE1OZTZ0UWZyTmlpWjZMSENJCkZtNTBSbHl0OVhQdVFjNGt6a0Zs
+            S0YxOVNjd2ducUpmYkt6VTArWWFrZ1UKLS0tIE51NmFwYkpaMDZ4YzBIS1NYSkc3
+            aDl3c2YwVCt0M0ZrMlplTVZJSHdSUTgKDbZbGEwxZXK6s3BHZsJNkPx6Ab0Y00f0
+            yO3VUM+z4JGp/V3PD326+mHtHvJ+KPhRTH7d0G9GSQYEmY3tBac8Yg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-08-04T16:55:41Z"
+    mac: ENC[AES256_GCM,data:aStPFTKTLpRCFIFMCOzIyxHSXX3iwoDu9awy6fJ3Z+MWfp3s+ye4mwRSRxt/w1qxx7DgSYBBRygyh5ms8g7zzVZHtDfS8sX1edQDv1d1x5EUAJyOBMshopclHhdo1S80nr8iCsiHVGbnrGNQetDMciJhBlbVM7FL25iauoXmgIQ=,iv:EbqeJIGB0VAva4PgT9gZHC5pK8BhP/zNhNRdHESDQpU=,tag:mpWWLBcG2fZ3xncna73iNw==,type:str]
+    pgp: []
+    encrypted_comment_regex: sops:enc
+    mac_only_encrypted: true
+    version: 3.9.0
