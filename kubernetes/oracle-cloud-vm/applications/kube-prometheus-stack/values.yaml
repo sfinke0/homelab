@@ -1,15 +1,60 @@
----
 kube-prometheus-stack:
-  grafana:
-    enabled: false
-
-  prometheus:
-    prometheusSpec:
-      retention: 10y
-      storageSpec:
-        volumeClaimTemplate:
-          spec:
-            storageClassName: local-path
-            resources:
-              requests:
-                storage: 40Gi
+    grafana:
+        enabled: false
+    prometheus:
+        prometheusSpec:
+            retention: 10y
+            storageSpec:
+                volumeClaimTemplate:
+                    spec:
+                        storageClassName: local-path
+                        resources:
+                            requests:
+                                storage: 40Gi
+            additionalScrapeConfigs:
+                - job_name: node_exporter
+                  scrape_interval: 15s
+                  static_configs:
+                    - targets:
+                        # sops:enc
+                        - ENC[AES256_GCM,data:ioZ08a4MZ6Ta/jvK5bSGjawH0a7wj1KC+y8jJVEUxgchXkA=,iv:pTWevCMehZWhXR3uGiGfowr7Mm7a0eykptsDwstgT+k=,tag:r2RUTk0nXPKcos4vejY2Sg==,type:str]
+                      labels:
+                        os: ubuntu
+                        type: hardware
+                    - targets:
+                        # sops:enc
+                        - ENC[AES256_GCM,data:20001EKidBkJiIb06E97q4Rx,iv:3S8PlBF/OqTRJI9ygcuFkQrnEOSgonRav5R3cp15Ehc=,tag:YVrxX3AM554OzWMNp+/bfA==,type:str]
+                      labels:
+                        os: vyos
+                        type: hardware
+                        # sops:enc
+                        hostname: ENC[AES256_GCM,data:hT7nH1RgvOFWW2OCglRlc7NV4Y0IVhMZ/ybLWyBakItCyw==,iv:m76JNbR7hmg68uZHmKqQBykekuXIzygOuMzfsWN4nc0=,tag:qF0l+PnnIJg2c9YBQoIK7g==,type:str]
+                    - targets:
+                        # sops:enc
+                        - ENC[AES256_GCM,data:7lbVI4nQokMq2lROif1XQ0I=,iv:aC0tq47Z9rk6JeSSMZyntdxRbY+L4SQIz5WIob4Jj8c=,tag:VyXhpR+puz+i/WOO7Fby6Q==,type:str]
+                      labels:
+                        os: vyos
+                        type: virtual
+                        # sops:enc
+                        hostname: ENC[AES256_GCM,data:APrP06MNYubMEXnFDKw1xM1KWZoMen0MC8nzjUvweVkd+Q==,iv:3aKnSU0FKv3BYIYbgFgIrnFJryOxDpBSE/8Q+kyAfCg=,tag:Ic3ZAK+Qf0QqHNVC2Wnh8Q==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBCSXFiMHQ4QXRwM2RqcWFx
+            OEFQb09SYWQxSzJueWJOSG5uaUdaczNhV0dBCmlkQmZPU1ZtRTZ0MGtUSlNnbGsz
+            RHI2WldENzNlTTFDaVdGRjIxWVc0cUUKLS0tIDk2bmZycStrZTdGZWNtN2hvYU1O
+            Q0RMRHNGcEJqRk15bDRkU0g1VGtOVFkKuv/ZQt6p/2LjuXf959vLtaH0cjL1TA4c
+            4oFXSQqJCyNVjlweHTeuKLlwUJNWNBkt0LlU6EO0h+YmPrS65orwlQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-08-05T19:23:49Z"
+    mac: ENC[AES256_GCM,data:q7fqNXV780IrdZRJAgKmnmMQHGO6a6lY0KHDFXrAuP/HHlXn9CbIZ0clFlQCR6jFKdij0Ru8ZdjIjpKG6ga5zZ5933uQnhuNeRJQ904NNRAWFejQDWaAxi9z2Z66Ttvi+4VcOYlRRbgpSWz8Rku0u1yn9qyjm4gSNCQNG/yo9CU=,iv:R/bpXZIHBeIVLJnXjhc6jl8IXWlMa7NTarzxJcAk1QY=,tag:uPwz4IVqDZGXtjQCRTFsOg==,type:str]
+    pgp: []
+    encrypted_comment_regex: sops:enc
+    mac_only_encrypted: true
+    version: 3.9.0
