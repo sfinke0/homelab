@@ -5,6 +5,8 @@ kubernetes-ingress:
     ingressClass: false
     ingressClassResource:
       default: true
+    config:
+      ssl-redirect-port: "443"
 
     service:
       type: LoadBalancer
