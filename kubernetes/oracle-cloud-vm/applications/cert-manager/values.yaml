@@ -1,12 +1,12 @@
 # sops:enc
-cloudflare_api_token: ENC[AES256_GCM,data:7PDBd/1YY2CubvuvwITAu7kw4QoFKrP7yWVCU86NCzNE/Xer8zUVUQ==,iv:zXkkJGfIicXPDjkb/NZtYrKm5KCyj/Nf8ceyGZkvmQY=,tag:a2vLvGT9ubhWI6D4DDAzLQ==,type:str]
+cloudflare_api_token: ENC[AES256_GCM,data:CBHzno4qXyQGIbXyiOK059uKwzjFmoMAAm24q1xbqLTk9fWHM6Kjiw==,iv:thtUa4N1k/1H7XyQ1K0FF0RmenBwc6bhXhMFBkiIF4I=,tag:g613Y2elO3R5dIVuQmNsCg==,type:str]
 # sops:enc
-cluster_issuer_email: ENC[AES256_GCM,data:SaNX47NBAXqqhiSmQo3Q6lhkRdz3F4yh0w==,iv:yxvUF0ikRjJmYKsu+Iz9J78LsRUZPEvx1GJsPNzh7s4=,tag:OH4A9TKC+aIBH1VQxeuOnA==,type:str]
+cluster_issuer_email: ENC[AES256_GCM,data:lGnE6/cVVSlsaJxT+M5a9S7MunZqcs9Iuw==,iv:nssPV0NWqH1IyWqoXdPD/CY2zqZj8rJApxhlUZSa+YE=,tag:ihMtvxo2mh5jx2DirTmdYA==,type:str]
 cert-manager:
     crds:
         enabled: true
     prometheus:
-        serviceMonitor:
+        servicemonitor:
             enabled: true
 sops:
     kms: []
@@ -17,14 +17,14 @@ sops:
         - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBJNlJwNlhtTjN6SFdlQ3Av
-            VlVjV2U4MVViU2IwOGNJTTkwakpLdldLZEZjCnRIbVVOR21YaGthdWdPbFgxck9N
-            bWRxVnZ3em9JbjBwNGNVd0hOUjJJejgKLS0tIEhXTklGRFk0Ullnb2pGSkg3Q3FC
-            amV2ZWhSR1lEREpPVEhnMkhyUzJKWDAKcQep1KY+T2Gm9BgEF6OzgRBTHhCz11+o
-            J35jaW7RC+Y8PGcOSxkRmgHT575iCE/VHvZtKhrQoAm4+CdA1CSsJw==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBCYnhUQkxKNkpBcjlwRFl4
+            b2JRWUozU24wWUk4N0JJK1JZSGdsUStIZlNJCllyOFQyaGF1ZDdnSzF3bGpOSmtQ
+            YTRlTEpQQTkra29TQ3VhakZMUit5d1EKLS0tIFArOXQ4d05IOEdmZENnNDBDUGMr
+            VjRuRHAxZVJydStxSTRzaS9oNGluMTQKXpaENElKNdT8OaLuOu0Q8va/IQkvLFG/
+            6R2ON+IJKmT2wdnZYpnrtv33Y/XG/w0APexounBtNr2IOkNBieLCKQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-08-06T05:40:40Z"
-    mac: ENC[AES256_GCM,data:cOZ70qwf45Il+tsrx3c5uBNlm2jKvEn0a+fuF4aSUqvAA2EASpZCRFmbfPNMKAzIWxlAsy1dTOo79hg0ZLHNFkqke/RIfg0/mSkMnfxPgLN53rSOTbkcZH8/Wh2kJUC4Sb1XQeDJ01eSwXvdOhchVqlsZ/6DqhbmBDeZHt6Dk9Y=,iv:jnR39g7RllXi9QFuMIhwDTDUEaV+fZWjmXQmCnZoh0Y=,tag:tTLdVdXOcO90bA1wbHouIA==,type:str]
+    lastmodified: "2024-08-06T05:51:52Z"
+    mac: ENC[AES256_GCM,data:fjxPftAYXufZ2HZSyWpQXJ+vP//f/9nnk55TEr3wOgtF+stzjZnJEiRKah//8MlAn/5SgA2ySjybpSCc7nPXfIU92I4zcB9ew/KGCjSadk1f3E7z4hA5Un9QXhbaJSomc6NIA4RpInqgzsCQ8VFtGt8inNSs7Nq8jdzHknjymws=,iv:q6+jpzn26eJe3mynTzsvJCTvo/UrbBrVLKA9sYRh1po=,tag:sUeP/c04DiOf6tkqBGV5oA==,type:str]
     pgp: []
     encrypted_comment_regex: sops:enc
     mac_only_encrypted: true
