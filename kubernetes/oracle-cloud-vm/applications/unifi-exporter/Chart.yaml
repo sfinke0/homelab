@@ -1,0 +1,8 @@
+apiVersion: v2
+name: unifi-exporter
+version: 0.0.1
+
+dependencies:
+  - name: unpoller
+    version: 2.11.2-Chart6
+    repository: http://unpoller.github.io/helm-chart

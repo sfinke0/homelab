@@ -1,0 +1,28 @@
+unpoller:
+    dashboards:
+        create: false
+        grafana:
+            create: false
+    # sops:enc
+    upConfig: ENC[AES256_GCM,data:4/h5yLZkBj3Lv0LhrTszEwPgIDoB1h50F3ZZK3WzfA6tdIKgB+2WzqZKXYEhEhgnH5X8dAhWxNT8bP30c3tSZuCHrcz9LLj/iImvbzP2ekdQXVkxi+rQZGvv8Vh4VAYiI94we7r0scPJGNUFWTruw6YsabLilkY/uqRqNxhs5u22Owx8Ua1yC1kSYLx9bASbtdf0a9R1vI8Pa/eLb260Vn7EY6DTdqDzGkD1kI+CAzoimb5XVM2Dj381iaDST6sJx328XSbXCTDY9q/kBPBWGuwVsMCBAiDIM2rOsGZdXr5uAmLMTtGTBiI9py/D28bXtXyZ0dTFs6msB1hmiaQJbqsBXj3F4AQR1GRrEn12y70fDs2y3jragSsg6cHJuyujpXtiaYj9A4Xusy18wZmcWeaSKjnJbsf3v1XJmAYYHWuDxdtX0qgyKYQ7FyD11gT2BliCOtmLBiZdYlMQXvBovEdaiDRWnkp5TbbbQjtSnImzZPx1G5fwXxsSpjbiulENnYHz0J5KKBA7Sz1JmBxZsc9TBALZrhi0/OFMVp1LoYAppM9uyhtkTVHaJ+f1P6DZrE9Q1ENCoGUZHhv8RocZxgWBClGmurplobvCHf/JKoRc8+mhoaLdxUtDg7TUyvJZFNmPwgjaN6IaByPMV70azBJ544gtE+atTxNZtjDEEU4TpvBr56HgpOBHBVvEazpqBiUS6IU1gCXCwtw0vhN9J7FwYVKlhn3XPMz0FQ==,iv:WMMhxXX/7v1gdIjtCTgYyTbGuSkPUOI2rUEIcdAfrjc=,tag:RurUE+A8T4tgdCZbwjFbuA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBsZ2daYzZwUzA1eGwrNEFM
+            VmhjemNJZ3RXbm81ZG5VYit5ODlpV3Q5ODI0Cm9HU2ZvRnQyU2o0WnowR0Z4dVU4
+            Rjg3dGJUWHpVWk95WlRYUUlVTU5YNVUKLS0tIEhoY3JBZ1RVdWhwS3hxYnptbC9Y
+            YjBXSnp6Z2hYbVlyS3BoUEZtZ1FnT2cKhfU1HtGIHM/o3ZQSZj8yGxWWAl+CtFKN
+            8QhjfEGnpAOmmAQlpEJchYFhfJf5uhpgtzC6gdcidNWIRjQJ4tQVeA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-08-06T08:14:41Z"
+    mac: ENC[AES256_GCM,data:iNuJW6CWdTi5qQ2fmD2xPjVRcq/IymoK/LtcAGIu0o5uyjj9M4QtnNvUvFTCG0ePfehRTF0pb1gAbL1fTqtsAFle0MAYOr4cRQzMa+zdGkwiU9DvPWZ/lmTEV0qV7olX6183q6Sb16gbEvs7vBXm39K/y+4mUUbA+s0/QLU/2yM=,iv:knweUhhzTW93fe6tZEyl3neByLBLMoOCo1hYmiUSRXY=,tag:lY8vFET56AOuQaWZxLCFCg==,type:str]
+    pgp: []
+    encrypted_comment_regex: sops:enc
+    mac_only_encrypted: true
+    version: 3.9.0

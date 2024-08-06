@@ -1,13 +1,18 @@
 grafana:
     # sops:enc
-    adminUser: ENC[AES256_GCM,data:REKssVvjE1E1vYhH,iv:PutgQHZsOYEDt8hsRaJefhywtBoijBuMRN4wSlAn3Ko=,tag:Jy6S8+MXNZLgJP4oXS4ZwQ==,type:str]
+    adminUser: ENC[AES256_GCM,data:6Fdr6GaODbr69E99,iv:DouzVtkuOycgT82bEO/fKBFGwa+mOyfp/nL5NNfyvCU=,tag:aLfamcL2SsfD6fyFacqxLw==,type:str]
     # sops:enc
-    adminPassword: ENC[AES256_GCM,data:LZ9/fXSBiOB8XCIRi6sbM4MuTI8Q7z0TXVrAjaJCCu8=,iv:Z13nPKsy5p9XcWu1FEYfRUNJvOucKDrY7rAJ2RCRkKA=,tag:nNn3AEWxaR8wIPzmlArbww==,type:str]
+    adminPassword: ENC[AES256_GCM,data:szS5MCkSdrqoHW6VUxABfzJoLw5+zUXl0yPReuWG6gk=,iv:kpgQxRnOMwoIfpjBcC2KccxxOdqHu3yNhdVDdLmEv/4=,tag:OC5upQS5pgZyM4/m3RuMUQ==,type:str]
     grafana.ini:
         server:
             # sops:enc
-            domain: ENC[AES256_GCM,data:fNvJ1rnlErcpO80qwCabF/33dCHEQw==,iv:lsjjn3a95qZaVFsWaK6AoM/Pkvs7n6cF9tpSLq85Xr4=,tag:DkSvIwUV5/S+ysCcaDuCXQ==,type:str]
+            domain: ENC[AES256_GCM,data:U4ASjlsjVSw98sdIndfEy48czB1ORQ==,iv:ynW1B4nlQxkT477nelHBgzmzAr/p5Z1tqABzo2+2Nyk=,tag:M042MbRF62kwr00hw82UBg==,type:str]
             root_url: '%(protocol)s://%(domain)s'
+    plugins:
+        - grafana-clock-panel
+        - grafana-polystat-panel
+        - digrich-bubblechart-panel
+        - marcusolsson-hourly-heatmap-panel
     persistence:
         enabled: true
     ingress:
@@ -17,11 +22,11 @@ grafana:
             haproxy.org/forwarded-for: "true"
         hosts:
             # sops:enc
-            - ENC[AES256_GCM,data:M+k25SbXcRJ9ahVyrATVLaln6AK+3w==,iv:FgLkjfNgzSzp57K2fgtUtIkkLWaGnK44A7lzlVfk5/U=,tag:r4w5NRs8qpU2FWESV7mNRw==,type:str]
+            - ENC[AES256_GCM,data:mnYOkrRw7DjdoSgY3FILKc4+/VOBEA==,iv:AfgUEOQApzfoxGhdoUxTaJjNo59Khb1M1bRd+xu71XM=,tag:V3MacsB7m5/2E4Adrv15Wg==,type:str]
         tls:
             - hosts:
                 # sops:enc
-                - ENC[AES256_GCM,data:G3NJNyOdKLWK14uKGenHm/EKDDNeew==,iv:qOB9qX01HQmYGiNmqfIQgtTq/X0ST+hmbjClaQ9X0bQ=,tag:/IwaMMrc4rv4vQNyvIaEBg==,type:str]
+                - ENC[AES256_GCM,data:wuimsxrKprq+lrMC9tJ3B7gMdkWp8g==,iv:JRhY1b3uWk0b1XaOAliBJF6FC54lY/J+6rYhiCwEjQo=,tag:qnmFI1aRwF8UOR+kSJw0Kg==,type:str]
               secretName: grafana-cert
 sops:
     kms: []
@@ -32,14 +37,14 @@ sops:
         - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAxM2M1R0crNm13cjdwZW5M
-            czMrT0RCeE9YaFB4cnRXU3Z3SDA0VVZtY2hRCkE5dGU4UFd4V0xDdkxPbzlDRmpW
-            aTNVanEyeEMxejBwSC9OMS9RaDljU1kKLS0tIE5ydEx5bkFKN25VbWRXQTlNTFlL
-            WmlXVWZqbzNFeE1qMVVyWnlRNmFjR1kKI4VPg29htHjSeOwpGWcM+Q6tYG7AP75H
-            YI/J/9gvwj2L1U44astDVKIlpvYWvjaam2eaLEOcCEKgOFsf9zWo+w==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAxL3pyRHlXRU1tb3liekJj
+            RVJhbVcweUd6MzlMcEMxbzRlYXg3dS9KaFY0ClRtTlJSL0xxVitKTkRpRTBIWWFw
+            UlRhd0E4N3BFWXBlcUZRVW5pb3BYUlEKLS0tIGxWeUozRGFYNlVEVVVTYitLZkFF
+            M1ZnZDRrZVRDMmk4ZjdlZ0oyMkI4MkEKGZR/CfNfHlsnVWD53B9VF1uxV1DpLQAE
+            XGiNQ3V3I6l99nT5TTAnhQWKTfeAFZJVIKv+ASsyxvl88exLPBS4QA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-08-04T19:35:10Z"
-    mac: ENC[AES256_GCM,data:tQy0vmz8d2Qxs3Rmm7hyfxVuTa/z5lpzJDJ47KrAaKu3vjaA5pJFGsGYXVO6obJMpiDTQIcYV7iNRDb/TBG2ZJghU8ktI3/lCglQ7WSbVDG5Fe4Fd7RolBy1EOkCAfIkysMu+syPeaIdWlyxCt/8ITRvaCNawIT5wXD0db9VCHs=,iv:VqWdp1CMbzhr1AI8LdCJ5+umZZdkS1OdKcYAnxITLSw=,tag:XHtB3sUxNLHm1P77YPQpqw==,type:str]
+    lastmodified: "2024-08-06T08:07:31Z"
+    mac: ENC[AES256_GCM,data:QrSvz9MMkF9LkLOZzqRm0UtuAYFky5FJ11tufWPiZwBcP6KVfqdGFIYe8oAj8W33jUECqnL9yATJtGK4oDF+hmm5MSBjtiBx8z8DNpff2Tv6ZmDBWsLUCcxzWbBOWDk6vWO8DjtwlKES1kFgUJ4Z5pPZ5gRPSvCOIES3Y2OqCL0=,iv:UP2MO+A3P+dz2fgSOjSICdUxvDVl9YzV1MJeyoT6ITM=,tag:QHps3Q9rb8Z84S7CXOuQLA==,type:str]
     pgp: []
     encrypted_comment_regex: sops:enc
     mac_only_encrypted: true
