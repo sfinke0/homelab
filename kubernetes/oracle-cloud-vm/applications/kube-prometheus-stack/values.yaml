@@ -12,31 +12,37 @@ kube-prometheus-stack:
                             requests:
                                 storage: 40Gi
             additionalScrapeConfigs:
-                - job_name: node_exporter
+                - job_name: node-exporter
                   scrape_interval: 15s
                   static_configs:
                     - targets:
                         # sops:enc
-                        - ENC[AES256_GCM,data:ioZ08a4MZ6Ta/jvK5bSGjawH0a7wj1KC+y8jJVEUxgchXkA=,iv:pTWevCMehZWhXR3uGiGfowr7Mm7a0eykptsDwstgT+k=,tag:r2RUTk0nXPKcos4vejY2Sg==,type:str]
+                        - ENC[AES256_GCM,data:DSvoHbPKuD8uKK1WbBPSvCnD1jdbQiDQ+UfiLoF3kbXvVPM=,iv:CkOm1aF11uOQ30kVLegYopS/4ZVU4Iz+O9zREramAyI=,tag:8Xy9LTFKoOWanD1wzQYrLA==,type:str]
                       labels:
                         os: ubuntu
                         type: hardware
                     - targets:
                         # sops:enc
-                        - ENC[AES256_GCM,data:20001EKidBkJiIb06E97q4Rx,iv:3S8PlBF/OqTRJI9ygcuFkQrnEOSgonRav5R3cp15Ehc=,tag:YVrxX3AM554OzWMNp+/bfA==,type:str]
+                        - ENC[AES256_GCM,data:tC1X1QPhXVslCU75WEm09IM=,iv:O5EmnawrY9nW8H4/E3OOhOddp8+II/OT7+RH2Nha3nU=,tag:RMEXYKa8TYK/GRaMPwOv8w==,type:str]
                       labels:
                         os: vyos
                         type: hardware
                         # sops:enc
-                        hostname: ENC[AES256_GCM,data:hT7nH1RgvOFWW2OCglRlc7NV4Y0IVhMZ/ybLWyBakItCyw==,iv:m76JNbR7hmg68uZHmKqQBykekuXIzygOuMzfsWN4nc0=,tag:qF0l+PnnIJg2c9YBQoIK7g==,type:str]
+                        hostname: ENC[AES256_GCM,data:Rm+yB53J3y+nSdRT0vrv9l7RrpozCuFiffYeVhVk+SkXQQ==,iv:evmAlTROtwzaLdSV+Ir2f23DJNkuYLihRal13icJAv8=,tag:GRxFRBCLjHNrz4D755JCAQ==,type:str]
                     - targets:
                         # sops:enc
-                        - ENC[AES256_GCM,data:7lbVI4nQokMq2lROif1XQ0I=,iv:aC0tq47Z9rk6JeSSMZyntdxRbY+L4SQIz5WIob4Jj8c=,tag:VyXhpR+puz+i/WOO7Fby6Q==,type:str]
+                        - ENC[AES256_GCM,data:DeKOzyQQoMNQTUu5Nyqo,iv:ymLRbuGmjQQnk2oUWRjvLg57p0lnEWQ1mWmHRuexhow=,tag:N5emAyDVDJBFupT7bF18Uw==,type:str]
                       labels:
                         os: vyos
                         type: virtual
                         # sops:enc
-                        hostname: ENC[AES256_GCM,data:APrP06MNYubMEXnFDKw1xM1KWZoMen0MC8nzjUvweVkd+Q==,iv:3aKnSU0FKv3BYIYbgFgIrnFJryOxDpBSE/8Q+kyAfCg=,tag:Ic3ZAK+Qf0QqHNVC2Wnh8Q==,type:str]
+                        hostname: ENC[AES256_GCM,data:caSskLpXzUsiEAcKSVXdzfAACz9xfGYwTZGQF1SxLIgRyQ==,iv:vCcyIUCqqYyGxvvkWXP9Bh1hgk3mUuo7Xw3npOhZZ80=,tag:BhtHy2mbGgmDMBw5fQJDEA==,type:str]
+    prometheus-node-exporter:
+        extraArgs:
+            - --collector.filesystem.mount-points-exclude=^/(dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+|run/.+)($|/)
+            - --collector.filesystem.fs-types-exclude=^(autofs|binfmt_misc|bpf|cgroup2?|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|iso9660|mqueue|nsfs|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|selinuxfs|squashfs|sysfs|tracefs)$
+            - --collector.netdev.device-exclude=^(lxc.+)$
+            - --no-collector.arp
 sops:
     kms: []
     gcp_kms: []
@@ -46,14 +52,14 @@ sops:
         - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBCSXFiMHQ4QXRwM2RqcWFx
-            OEFQb09SYWQxSzJueWJOSG5uaUdaczNhV0dBCmlkQmZPU1ZtRTZ0MGtUSlNnbGsz
-            RHI2WldENzNlTTFDaVdGRjIxWVc0cUUKLS0tIDk2bmZycStrZTdGZWNtN2hvYU1O
-            Q0RMRHNGcEJqRk15bDRkU0g1VGtOVFkKuv/ZQt6p/2LjuXf959vLtaH0cjL1TA4c
-            4oFXSQqJCyNVjlweHTeuKLlwUJNWNBkt0LlU6EO0h+YmPrS65orwlQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBhaVNZOXpaalpKa01McjZq
+            NDFnM3FKbFozb0hVL0tRSXQ2SE5QajcvM3kwCjRHWVloQVNXTHhCTXNzSFB0ajdX
+            T2ZhVDBJQmIrdWFpWEhUZFhwNFAvek0KLS0tIFVHa0tEUmFwU1BxelFjSDZ2d2Y5
+            T0R5TmoxNFBMWkZqTkFsSDhpZC9BMk0KXv1tZkKlQeItQ2HXI7gXJrZdBDKusLNE
+            KWAOjpw5oxH/qo19H5+h1WpeR3Jp0cgxLZuHyc43Q75a2Yv6GiD5uA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-08-05T19:23:49Z"
-    mac: ENC[AES256_GCM,data:q7fqNXV780IrdZRJAgKmnmMQHGO6a6lY0KHDFXrAuP/HHlXn9CbIZ0clFlQCR6jFKdij0Ru8ZdjIjpKG6ga5zZ5933uQnhuNeRJQ904NNRAWFejQDWaAxi9z2Z66Ttvi+4VcOYlRRbgpSWz8Rku0u1yn9qyjm4gSNCQNG/yo9CU=,iv:R/bpXZIHBeIVLJnXjhc6jl8IXWlMa7NTarzxJcAk1QY=,tag:uPwz4IVqDZGXtjQCRTFsOg==,type:str]
+    lastmodified: "2024-08-06T05:32:08Z"
+    mac: ENC[AES256_GCM,data:NJLfk4xAYRxZcClU33jdNhG/zp/hYMBhIcR5jgIUumPbudE5M/6UaeuYC7+sIMw0c0pyGb3mTMNSBLRGhUVEVqNd+Epb8u3cVioGJBu7ybdgK3poOqVGanK0UnLjmSj8L2u4bqe+1gEkf6dXzsz8SzZftRIVc26L9aO8zX5uzCE=,iv:p1O59vq3C2sp4mlyOJ9Ho+qxV5J0Ib88kkttnGtYKSA=,tag:YtTLlCiLan5x+a5C0m5TyQ==,type:str]
     pgp: []
     encrypted_comment_regex: sops:enc
     mac_only_encrypted: true
