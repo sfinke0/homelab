@@ -1,5 +1,7 @@
 ### Helm ###
 # Chart dependencies
 **/charts/*.tgz
+Chart.lock
+
 key.txt
 .secret.yaml
