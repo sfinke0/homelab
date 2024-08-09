@@ -1,78 +1,78 @@
 kube-prometheus-stack:
-    grafana:
-        enabled: false
-    prometheus:
-        prometheusSpec:
-            retention: 10y
-            # https://github.com/prometheus-community/helm-charts/issues/106#issuecomment-700847774
-            # https://github.com/prometheus-community/helm-charts/issues/2323#issuecomment-1612551019
-            # discover any podMonitor / serviceMonitor in any namespace
-            podMonitorNamespaceSelector: {}
-            podMonitorSelector: {}
-            podMonitorSelectorNilUsesHelmValues: false
-            ruleNamespaceSelector: {}
-            ruleSelector: {}
-            ruleSelectorNilUsesHelmValues: false
-            serviceMonitorNamespaceSelector: {}
-            serviceMonitorSelector: {}
-            serviceMonitorSelectorNilUsesHelmValues: false
-            storageSpec:
-                volumeClaimTemplate:
-                    spec:
-                        storageClassName: local-path
-                        resources:
-                            requests:
-                                storage: 40Gi
-            additionalScrapeConfigs:
-                - job_name: node-exporter
-                  scrape_interval: 15s
-                  static_configs:
-                    - targets:
-                        # sops:enc
-                        - ENC[AES256_GCM,data:uZwMmiBUNVJhO3C5BgjmGXDNX0K81jcz1PUZvyMo0bKHScA=,iv:pkn4TZjqE/xFIDzPj9ugZbA9ttcgOgNCQ8XT7CgL2fQ=,tag:UmjMSaN94j1D706XXa1fpA==,type:str]
-                      labels:
-                        os: ubuntu
-                        type: hardware
-                    - targets:
-                        # sops:enc
-                        - ENC[AES256_GCM,data:SvEwfH9y4rdIaPQSfL8JIb0=,iv:2zIBAdzqgKpgVNKTE6m84wSNm8vSgt5sjkvO2ukFc5Q=,tag:BTad5pUjZoXMU3oZ9L7i3w==,type:str]
-                      labels:
-                        os: vyos
-                        type: hardware
-                        # sops:enc
-                        hostname: ENC[AES256_GCM,data:jWOOeNO6hZWXb+X6+dVZ0AEtZz1MbLHbaxFV08EfBxxLMQ==,iv:rHTOgsAKc8SyQghEH2+LVK+8pDT2Ljs/yu0ESPkf0N4=,tag:zGp46TQgib7zVCluegQB9Q==,type:str]
-                    - targets:
-                        # sops:enc
-                        - ENC[AES256_GCM,data:OECEtrN1x5Xisk8QIVeJ,iv:tsiVM7VV0YfZtsjlztXy0dkUba4fB28gFMBnIFtpsTs=,tag:FXl6F9NV4dV15HYRTvPw4A==,type:str]
-                      labels:
-                        os: vyos
-                        type: virtual
-                        # sops:enc
-                        hostname: ENC[AES256_GCM,data:ijPr7b3eov+viFqwZv9FoqJkhKz9sE7IvO0n8w3jfHoFXg==,iv:rqXgtZiQFHoZOY/moJdlIGrsPlRzemRqIrFhznv1nZ8=,tag:mDnm3zc5ayO7KBZvUjsttA==,type:str]
-    prometheus-node-exporter:
-        extraArgs:
-            - --collector.filesystem.mount-points-exclude=^/(dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+|run/.+)($|/)
-            - --collector.filesystem.fs-types-exclude=^(autofs|binfmt_misc|bpf|cgroup2?|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|iso9660|mqueue|nsfs|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|selinuxfs|squashfs|sysfs|tracefs)$
-            - --collector.netdev.device-exclude=^(lxc.+)$
-            - --no-collector.arp
+  grafana:
+    enabled: false
+  prometheus:
+    prometheusSpec:
+      retention: 10y
+      # https://github.com/prometheus-community/helm-charts/issues/106#issuecomment-700847774
+      # https://github.com/prometheus-community/helm-charts/issues/2323#issuecomment-1612551019
+      # discover any podMonitor / serviceMonitor in any namespace
+      podMonitorNamespaceSelector: {}
+      podMonitorSelector: {}
+      podMonitorSelectorNilUsesHelmValues: false
+      ruleNamespaceSelector: {}
+      ruleSelector: {}
+      ruleSelectorNilUsesHelmValues: false
+      serviceMonitorNamespaceSelector: {}
+      serviceMonitorSelector: {}
+      serviceMonitorSelectorNilUsesHelmValues: false
+      storageSpec:
+        volumeClaimTemplate:
+          spec:
+            storageClassName: local-path
+            resources:
+              requests:
+                storage: 40Gi
+      additionalScrapeConfigs:
+        - job_name: node-exporter
+          scrape_interval: 15s
+          static_configs:
+            - targets:
+                # sops:enc
+                - ENC[AES256_GCM,data:A03XIuppsOmX+9NZ7BcJ65TRSPVmVM0LTDKWn1z6Qu6xw0g=,iv:/ddV1ZM29IqDSkwTLS72e38XJeVPkfkc6aSKZinZ8rQ=,tag:GKq6ku6cwU2faixVotatfQ==,type:str]
+              labels:
+                os: ubuntu
+                type: hardware
+            - targets:
+                # sops:enc
+                - ENC[AES256_GCM,data:UTggptuppyVFu9+6S20EwdQ=,iv:VQG2S85erAyWxPhb/4fGmT0ykLYYnP3/gIsArgJ/1t4=,tag:TFZswn2ULNiBURqx/Wrc5w==,type:str]
+              labels:
+                os: vyos
+                type: hardware
+                # sops:enc
+                hostname: ENC[AES256_GCM,data:dK8Uoi+okIDLZMalacac8b4LoRxdxZxBSr+p0FQkips7uQ==,iv:nsQj0bhoIC1a6SpTyWvAqDOkfMNmjJnW5Hb1aVrrFlI=,tag:ruJyDriQgkvkHr9LBT1TtA==,type:str]
+            - targets:
+                # sops:enc
+                - ENC[AES256_GCM,data:DSsqriT2M68g7wfu85sf,iv:g7/fM8ipP1veKls7DllzAn13LGEYwHqoLMNSkqVFpFM=,tag:ffVYLyIOxkTF9SmLWCZPXQ==,type:str]
+              labels:
+                os: vyos
+                type: virtual
+                # sops:enc
+                hostname: ENC[AES256_GCM,data:/S3/O8XOhVXL+JjJjUXHgex1iav0rtfaOzOoMeHhYuvolw==,iv:PaPcAxR7O3UMWujProV132Q8KxSuz7Psijx/asSS6/s=,tag:zkYzUkJaxJOtXmIoD6EPQw==,type:str]
+  prometheus-node-exporter:
+    extraArgs:
+      - --collector.filesystem.mount-points-exclude=^/(dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+|run/.+)($|/)
+      - --collector.filesystem.fs-types-exclude=^(autofs|binfmt_misc|bpf|cgroup2?|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|iso9660|mqueue|nsfs|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|selinuxfs|squashfs|sysfs|tracefs)$
+      - --collector.netdev.device-exclude=^(lxc.+)$
+      - --no-collector.arp
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBnSGMrR04vNlJFWDU4dU1z
-            RDVwQ2JBVzVwVkRqS2k0QnJVOS9YMjljS3lRCjRQdnFtNnNqNmsvVUs0YmhhbU1D
-            Q3hJVkV6KytJNTFPM1kwYlh3SEYxN0kKLS0tIEY5VHAxOXF6b04za2hjYml3MytZ
-            QU96eVpGTU9mTnlZeUx6d3h3UHFBWEEKholXWAJDTciV0tUqdLl9S9qy2EvJ5TWU
-            qQDOHLVUkS/RondrKX9eTXgaBbdtt/lXYY9hiDJwkaE1TJ1a/xm/nQ==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-08-06T06:36:56Z"
-    mac: ENC[AES256_GCM,data:Our0zunpd1YMJ+ThECqNjnSV8RTkMEwzRqHTAW9m9BmDReLkgll5uKK6K9LD7q0VB1DD5/PAorugJiubBTQj/7lZkmEyt2XwQkDoEQlbH5x0MLNRRxEwhGbOrRGhxC7QuSY+RayZW6IIPKHQQ40poHly8OmSOly62ubXUiuLoJs=,iv:TeoO2xYfO4pfVE7xbxig/ROoY0gmhqsxlBSkZsjYV5I=,tag:FJSVS9J6PRi4PLt3oRR3Xw==,type:str]
-    pgp: []
-    encrypted_comment_regex: sops:enc
-    mac_only_encrypted: true
-    version: 3.9.0
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAwREVtU1FMT1ZuS0Vucml6
+        YjR2Q3F5aDdlQWRQVktLaW4vSXp4b0Rva2pzCk9MR0FVVFRwRzhIdEJFa29lazNy
+        VEhCWVdkL0hKTnF5NThIVlpBRnlrS3cKLS0tIDNNTmRrUlRmb2tWM2JubFNYUG5t
+        b3lwRG9QT3d4N1haSFl5aW1vb3pqY3MKKXyYXBr9AuRYyQzt71ItemSXAbekAPkP
+        eKSsQn6dAXWiGBVnBQ7/FGiqAkSJLpiZTb/+70mwni1tM4rm4a4zIw==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2024-08-09T22:39:13Z"
+  mac: ENC[AES256_GCM,data:UwtJuGY/L+JQGHVsLk/Ruu5SWmI3Wn9jtok9ucaLiPYk8l+QMq0lmFvvkKGR7v3VY22L763A8slnHah1/QrmnnXUp/i3997V8O4+uDamm9xtAzKBgZak8CpGtIYgwrX0pW4EFL37yIdlsC37yK95iz+QRoOnce3e6j2izxARDg8=,iv:oUyzztewyjK3g33SBAjv7P/eru5ToCw9nRxVkl78LE8=,tag:6Y1Nb6shxdZ2teIOgGlDqg==,type:str]
+  pgp: []
+  encrypted_comment_regex: sops:enc
+  mac_only_encrypted: true
+  version: 3.9.0

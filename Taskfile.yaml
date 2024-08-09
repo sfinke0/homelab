@@ -1,0 +1,9 @@
+version: '3'
+
+tasks:
+  helm:reencrypt:
+    cmds:
+      - | 
+        for i in $(find . -type f -name .secret.yaml); do
+          helm secrets encrypt "$i" > "$(dirname $i)/values.yaml"
+        done

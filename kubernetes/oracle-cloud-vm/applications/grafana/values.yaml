@@ -1,84 +1,84 @@
 grafana:
-    # sops:enc
-    adminUser: ENC[AES256_GCM,data:1Fv4qqjN3bw9TMjk,iv:t1hksZTWZwa7K93Wfk6kujNAgdXKROmAKkvYIsuIvpY=,tag:Rb6e4YuaBwet/uFa4vBQzQ==,type:str]
-    # sops:enc
-    adminPassword: ENC[AES256_GCM,data:zog0RqBBPX6dKPFHMigIU4mmI+9gN4s/5XXFR9YI+UE=,iv:feAj9/UVXBJ80yyXwY1KDMlUWH5OvutcHVsD7c4CC54=,tag:aNdX1R3F4ND8q2pAJfQPUA==,type:str]
-    grafana.ini:
-        server:
-            # sops:enc
-            domain: ENC[AES256_GCM,data:0web5j0qtq2DXw9jg0c6Rzz5TjlrjQ==,iv:k8fgwWIlAzA1Mx7fMw/Zvl3xbiLBb4USSYpfEBQi8pk=,tag:G5miCIwiT1fbY2nWUNX6Pw==,type:str]
-            root_url: '%(protocol)s://%(domain)s'
-    plugins:
-        - grafana-clock-panel
-        - grafana-polystat-panel
-        - digrich-bubblechart-panel
-        - marcusolsson-hourly-heatmap-panel
-    persistence:
-        enabled: true
-    ingress:
-        enabled: true
-        annotations:
-            cert-manager.io/cluster-issuer: letsencrypt-prod
-            haproxy.org/forwarded-for: "true"
-        hosts:
-            # sops:enc
-            - ENC[AES256_GCM,data:mi7afzPvPoQUDcQO00KMSgYW9VhBGw==,iv:m0QXNLu/gh2FIzuFqufKRnmieLW6/swJVg4nvJ9b6jg=,tag:iLbarFYc2Ia0SmdpAron5Q==,type:str]
-        tls:
-            - hosts:
-                # sops:enc
-                - ENC[AES256_GCM,data:HYWjtekvCXtTTLicmf7sEw9qG48Llg==,iv:GM1Q6Eg1V2GUCOfBMXolJQB2xEKu+cxSx0pMA5BeWj0=,tag:V9kGVzOkq2OLDqXgx80zDQ==,type:str]
-              secretName: grafana-cert
-    # https://github.com/dotdc/grafana-dashboards-kubernetes/tree/master?tab=readme-ov-file#install-with-argocd
-    dashboardProviders:
-        dashboardproviders.yaml:
-            apiVersion: 1
-            providers:
-                - name: grafana-dashboards-kubernetes
-                  orgId: 1
-                  folder: Kubernetes
-                  type: file
-                  disableDeletion: true
-                  editable: true
-                  options:
-                    path: /var/lib/grafana/dashboards/grafana-dashboards-kubernetes
-    dashboards:
-        grafana-dashboards-kubernetes:
-            k8s-system-api-server:
-                url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
-                token: ""
-            k8s-system-coredns:
-                url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-coredns.json
-                token: ""
-            k8s-views-global:
-                url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-global.json
-                token: ""
-            k8s-views-namespaces:
-                url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-namespaces.json
-                token: ""
-            k8s-views-nodes:
-                url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
-                token: ""
-            k8s-views-pods:
-                url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
-                token: ""
+  # sops:enc
+  adminUser: ENC[AES256_GCM,data:as262G3cXPzBhOlg,iv:Hct8a+8uRkRfMqf3xveY0RtigCUh6wF/GjKcQ5Ir1gs=,tag:BBOt8JZ6GGjcaXYtwFDw9g==,type:str]
+  # sops:enc
+  adminPassword: ENC[AES256_GCM,data:mGHMiQEIVA5f/dccKKf3pOlsijzWQJmMjHQq7p2ytiM=,iv:lO8GehXmfHpsNmDPHpPC8FHS7RPs0Kr7QjLFmavVrWA=,tag:ksbPFnmJ5WafD/WDWTpTLQ==,type:str]
+  grafana.ini:
+    server:
+      # sops:enc
+      domain: ENC[AES256_GCM,data:YPRNj4/+xg4CdG3QZYiYH0PR+hVEOw==,iv:AVJCjylYXlhVWGDrFf+58/TFT+rBdygEWRde24HVSOE=,tag:ox90nIpwzJikq7KxEMcRbw==,type:str]
+      root_url: '%(protocol)s://%(domain)s'
+  plugins:
+    - grafana-clock-panel
+    - grafana-polystat-panel
+    - digrich-bubblechart-panel
+    - marcusolsson-hourly-heatmap-panel
+  persistence:
+    enabled: true
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      haproxy.org/forwarded-for: "true"
+    hosts:
+      # sops:enc
+      - ENC[AES256_GCM,data:bji28jPIhcw9R7U+tjMx36r7/L6J/w==,iv:2+W6enKSGwE9t0HjGnFQHB30MEnpLyTXXYc8iSJSqzA=,tag:b0cT7D4kJLDh2LDqMitTfw==,type:str]
+    tls:
+      - hosts:
+          # sops:enc
+          - ENC[AES256_GCM,data:xsaycwfeE9+D5pn5qNneUDZNSJef0g==,iv:LfWlEoc0D/h7QR8WLwOMeHP8O7sbRtzXjPZ0FOiKhOI=,tag:aXlRZsNFfNisghz3fEIjqw==,type:str]
+        secretName: grafana-cert
+  # https://github.com/dotdc/grafana-dashboards-kubernetes/tree/master?tab=readme-ov-file#install-with-argocd
+  dashboardProviders:
+    dashboardproviders.yaml:
+      apiVersion: 1
+      providers:
+        - name: grafana-dashboards-kubernetes
+          orgId: 1
+          folder: Kubernetes
+          type: file
+          disableDeletion: true
+          editable: true
+          options:
+            path: /var/lib/grafana/dashboards/grafana-dashboards-kubernetes
+  dashboards:
+    grafana-dashboards-kubernetes:
+      k8s-system-api-server:
+        url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-api-server.json
+        token: ""
+      k8s-system-coredns:
+        url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-system-coredns.json
+        token: ""
+      k8s-views-global:
+        url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-global.json
+        token: ""
+      k8s-views-namespaces:
+        url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-namespaces.json
+        token: ""
+      k8s-views-nodes:
+        url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
+        token: ""
+      k8s-views-pods:
+        url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-pods.json
+        token: ""
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBpZi80K2s0TW5hcTBUbjJE
-            Z2VaMmFaZS9YTldaK3pha2pSUFBuRDdDeTNBCmxIMmJ3QWNIeTZVRnA5UVpnWHE1
-            aWZFa0lqUlRXbHd4dkZTTHIrVG8xS3MKLS0tIEtyUFlJd2tYTmVOR1Y5N3E0R25S
-            bG9yUCt5V3hnUUJuNENhOE53OVVUSHMKLP+yZGfNMBDn6O6e3bvqMiwVn+WoX//3
-            igWcb2xDHp1YEkiIilju6Pn8kPf3cBQR7FEoruZaD4SqDpFq4XACyg==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-08-09T21:26:31Z"
-    mac: ENC[AES256_GCM,data:sPkWZ/cbtm0bxFzTUPcWS1YTLXURg1BZ+4FwlK7bxbv4g6rOWf7JZZHF4FhVbs7Dd1DTwltcoY6MxLKfNHKU5nVKuNrOtA14LJiRcfqN3r6cBGAw7JohWqkzFMiq3WrEqJhOlcVmyuZWxi6LD5ZCkWaUHj84nuuCvJCaZDStX7g=,iv:xwJFITHg4EYPJq+GWZjzonWk1vBwmb/ZOGWsPIrbWoU=,tag:x0R/ue8wAGWgGSxX35MsRg==,type:str]
-    pgp: []
-    encrypted_comment_regex: sops:enc
-    mac_only_encrypted: true
-    version: 3.9.0
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBaa1pISTFlb0l2ZFVRdWF5
+        WHA3YzVlWTVhOUZMQ2trcnNSNWt2YU8rTlFNCkVESTNFOEc2N1FTTElHVmg5ZXNO
+        RVlRalBvdUt3YTFxR3dxSXZuSW51ZWcKLS0tICs5K1ZSeHA0ZEFGTUtSTDQwMVBz
+        ZmNpaUVOSzdBY09UV1FjUjhIVFBZSkUKgMRoTFx2GELWmlRLyfqzu7CDPl+v1jdp
+        vLQ+RX7QgPzsLpydDNI9xz9BjomGd0+23JBCkPAMFj9c0SomxEg3pQ==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2024-08-09T22:39:14Z"
+  mac: ENC[AES256_GCM,data:Knt2QvqW5ZSpv4ZgFpG/gXpyw/mvYkUJ0M2/tOKsB4t7LG1qo54+udbTuFB7F3usuQeRukZ6/ivEiSWi5zlLcOUIdKFaMKJf1Ydro3c4Z0zoSwXTfY8Xon2UhqVylE+Oe1Qn7mvtuF3ZMyBeUcnCZCXzE1PhFPGG7okYpjjTKmQ=,iv:ji5Y5878EdmbP4CF56+U8Q4B4JB1j5/CSk65eT7KuuY=,tag:sEj3odXkwNfZParlJyBpaw==,type:str]
+  pgp: []
+  encrypted_comment_regex: sops:enc
+  mac_only_encrypted: true
+  version: 3.9.0

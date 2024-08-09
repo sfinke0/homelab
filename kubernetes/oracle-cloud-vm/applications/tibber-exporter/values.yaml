@@ -1,33 +1,33 @@
 tibber-exporter:
+  # sops:enc
+  tibberToken: ENC[AES256_GCM,data:8kGbg5CTODawW+YOpTrpgZQMK9ngveUFYqk9eNTl0E1XMT1F6qJ9O/w02Q==,iv:Uj8FLltLq6r+DEF9zgsGZy2nGmbRlkrDSHMBRGbEKUY=,tag:pitaCbQ+CB036AaDY2tdsA==,type:str]
+  liveMeasurements:
     # sops:enc
-    tibberToken: ENC[AES256_GCM,data:TJeX69K7UPkKmPLH8UX0sLlhAaO3BVxlIzwZBZcgVgtR/IdleafUJ3KG1A==,iv:PHxUdlf2XoFQLwaLjMQef2LWE9yrSwNi0IpN7mw2wyI=,tag:mXZZ4BU6GXuSfW/K/Y0fQg==,type:str]
-    liveMeasurements:
-        # sops:enc
-        - ENC[AES256_GCM,data:sBWuLEb4nYAR7hCc9yLKcGEYWu+VB/dJy8ujJpnJ4YjWh3Pl,iv:hkIsgAuE40DT9V8cKQyNWuDu5mzkrevVEbZqYHCTSng=,tag:ybmRY45qo6l+fLKtHpNMjQ==,type:str]
-    serviceMonitor:
-        enabled: true
-        interval: 5s
-        labels:
-            release: kube-prometheus-stack
-    fullnameOverride: tibber-exporter
+    - ENC[AES256_GCM,data:YHV32D0QFm55mA1RmuksBXU53m6t3nYPRI3P8d0/XN/QvBsL,iv:4B7gmsp5S0kc7oPJ7Zh6FOgXAPiCzseoyeNLVyBdxdM=,tag:O1ndIP3tR5zdE5Ny1iVMFw==,type:str]
+  serviceMonitor:
+    enabled: true
+    interval: 5s
+    labels:
+      release: kube-prometheus-stack
+  fullnameOverride: tibber-exporter
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA3cjBPUjN0RTJjK0RkSm1a
-            QUFVKy9UeUthM00ybGxXaGNMN3lOZm1yTXowCmNWbGY0SmtoKzBSMk1LQTVsL0N4
-            L09CenN2LzAxczdyQ2hjL3ZiSmk5R3MKLS0tIE1VRUxlMWFZWjZNQ3QyOXRXK1kv
-            YmpVUEVZeEo2c25EMHdMTXNpTHJ2NEEKefs1tAbpwiJX+UfFwv1unJiicHBEVqf2
-            1V+xGQfG2QrwICATQe1YvZ9cBIvKsY7hFeZNRmWEGTX6t6jym7fYhQ==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-08-04T15:52:24Z"
-    mac: ENC[AES256_GCM,data:7XE6HQJ9AdqvXHclTuemZUzdakuv2cD6voKpU9Mn2AhaHVWeYyphIUlioLrVpMPIE0kT2vGVLXwkT07637m4uukAgDD36EVxOtxpahNdqTU/J8SejpQeEMkraAjH2n3WCBu07yPuQcSOxlAdwf9lOt8HmMTuutjyYCsSszX53RQ=,iv:tI1hFY/auPghO9yPzJWbmSzY3DjEXIqF10/dAhQ37l8=,tag:g4RZRoAtmVHrtM4ZQACPYg==,type:str]
-    pgp: []
-    encrypted_comment_regex: sops:enc
-    mac_only_encrypted: true
-    version: 3.9.0
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBraVAvdTgrMjZGaHdoNzk3
+        eDYvVk1PQjhtZURHVEQrb1FQT1JIZUd5c2lNClBvbGZOODdSSEZ1UnJPZEFXMkVK
+        dGd0MndJNTh5OEJTSGwrcllMNHZhSDAKLS0tIG44NkFoTzlMZ1Y3SWV0MmNxdDlh
+        UnIzbzlic2M5NENDL3ZiSDJMaEcxdHcKM9bx8OZml4PIfFDCoAZGF0IRYZ9Qys9N
+        b/u9rnoqkcR8YWjsJdBUo0+E08T8/7t/+zB42ACF18/scHGAeKBURQ==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2024-08-09T22:39:13Z"
+  mac: ENC[AES256_GCM,data:wWmKiPnBvRRaEjVr2LaWdVVHf0eorNKz7+JnLpEG/DR+rLXwLMtncD5RKBaWxUPFcIJZuF04rbXakyAjwOI2IPdKmSrs++P1LaRn76JNs+wv3C/I+rNHA3gUv80TOfCTLRbKPSr4YE8gOwZX18WVKR1T8P+GETwcfUdgX18/gC0=,iv:wI1OjJ1qEdOvQqG4v+yE1XR47iZXgP39AQ3YZ1wTQwg=,tag:v1zK91Tcw9rcvJ5JOzI1DQ==,type:str]
+  pgp: []
+  encrypted_comment_regex: sops:enc
+  mac_only_encrypted: true
+  version: 3.9.0
