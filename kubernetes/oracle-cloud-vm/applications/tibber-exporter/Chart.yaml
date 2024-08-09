@@ -4,5 +4,5 @@ version: 0.0.1
 
 dependencies:
   - name: tibber-exporter
-    version: 3.6.4
+    version: 3.7.0
     repository: https://terjesannum.github.io/tibber-exporter/
