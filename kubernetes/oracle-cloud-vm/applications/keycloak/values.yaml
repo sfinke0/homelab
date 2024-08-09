@@ -1,0 +1,48 @@
+keycloak:
+  # ingress is doing tls termination
+  proxy: edge
+  ingress:
+    enabled: true
+    tls: true
+    # sops:enc
+    hostname: ENC[AES256_GCM,data:Zk3yiIHQR8TAETMQqNBXptPZ,iv:Z4r1xsyj6lJaS+zNJlKDOOb/lTDGl4gbECsr+P7kdyU=,tag:qVYtCcVV4PN992SQ/pDb+Q==,type:str]
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      haproxy.org/forwarded-for: "true"
+  adminIngress:
+    enabled: true
+    tls: true
+    # sops:enc
+    hostname: ENC[AES256_GCM,data:0aL+xcNC+2RYXWJPD3Bi2zXLBmGIeLj7,iv:aqrJYGfqPDJmF1TBkziXOtOAblOFvvsPueAjidF4/+k=,tag:Iyxl8v4z4QIObFC7B+WcaA==,type:str]
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      haproxy.org/forwarded-for: "true"
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+  auth:
+    adminUser: admin
+    # sops:enc
+    adminPassword: ENC[AES256_GCM,data:X6CnCPZNbni7uOei2Z/E3tmlg1a2okEVMfdregSeldGQUjjlLUbivSPcAl1H/oeRqXDA5ht3dVU7xJS30PQ34SLChIv41TAKWA5ybamfZOOWS0BvNzhYPkenuwoYHK5rquezbhSYDkn919JpYTriTPcqnaiytJsGqxWqh3PpLGc=,iv:thQNAYkiVF8OOLzPtqW2YdJZIXTQ7onaoEjQLn1ez1w=,tag:HpuqkpwpFUxEN3USP9QPyw==,type:str]
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBJamRodnMxZGVER0VYZ2Nx
+        NDJhN1luTU1NcThRVUVXTzQ4Skd6N2gxWFZFClMwK3VUQjlWVTkxWjc3RGIxN2lX
+        T1psQk5RWW9IWFhVbWt3NVg0ckU2dFkKLS0tIDhCUlVHWlFXZWFRUkZWWGtEWlkv
+        akYyMklJYmlFbEVBYnRTa1lGV3NDZHcKQX2EEvl3DrxToNkG2CNfE3X3dCEYefIs
+        AW2dlrnorDb6/2zRimDabCYBCRPHjZ6uYhOiciFTrN0DyijfWDek7Q==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2024-08-09T22:17:47Z"
+  mac: ENC[AES256_GCM,data:oaJ+euVJ11dRkS2+XEDv9isqqX7uxY9zZ3VSnn27fST+9rNymGns8BMzDsgGtcpL6TKPlpL+EkQGC7B408L629RnZ8qwS+6sKlR6/xLRCx8kd21X779umKhuPIjFKk9dEM7fSTBouM9RPka/ta4MFvDE7LaOt16lXJy6KzfSvsU=,iv:DUCGLH3JOMtBnuv0AWEReBT0Oj3nFpAHWC5/595l+fU=,tag:CsBTo7U+/AWzQaU2rS/SVw==,type:str]
+  pgp: []
+  encrypted_comment_regex: sops:enc
+  mac_only_encrypted: true
+  version: 3.9.0

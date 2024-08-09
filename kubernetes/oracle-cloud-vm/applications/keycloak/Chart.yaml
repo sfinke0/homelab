@@ -1,0 +1,8 @@
+apiVersion: v2
+name: keycloak
+version: 0.0.1
+
+dependencies: # A list of the chart requirements (optional)
+  - name: keycloak
+    version: 22.1.0
+    repository: https://charts.bitnami.com/bitnami
