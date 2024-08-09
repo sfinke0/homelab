@@ -8,3 +8,6 @@ creation_rules:
     key_groups:
       - age:
           - age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
+stores:
+  yaml:
+    indent: 2
