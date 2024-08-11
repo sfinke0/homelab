@@ -6,11 +6,16 @@ keycloak:
     enabled: true
     tls: true
     # sops:enc
-    hostname: ENC[AES256_GCM,data:WvO2kk3TIbJ6NC/ZqkyYtkpR,iv:8238uHAvX5mLDRffLrnMl/BDSG5PkNnC9rem1x524dI=,tag:kPiHZEHnGqYOOkr+S1vaLg==,type:str]
+    hostname: ENC[AES256_GCM,data:digps1G4FgVYMaYCOwulJhmQ,iv:WQ6FK0kjEHigzRl1NZC8/vFsA7NzKmZpfmgfMftig5g=,tag:72Tr3knJPbbhjBFPTdmaCA==,type:str]
     extraHosts:
       # sops:enc
-      - name: ENC[AES256_GCM,data:oHxdt9g1guv6GutLYqg=,iv:A1pK8EbFLZMCp7TJV+lWPB9f7jkdzy6ISa3jJaOp2wA=,tag:8EZd3lytEhDW79kekw2vjQ==,type:str]
-        path: ENC[AES256_GCM,data:Kw==,iv:IjGf1tP8oB5nKMeoOlzr2qfDE3gikzjKbpVqhVTvceA=,tag:fvVcvCGYLBApTao8f1bXGA==,type:str]
+      - name: ENC[AES256_GCM,data:jF9RP2CWrDwXc1utGVk=,iv:RyO1iC4uDRds8vnKt8JnMr2SlNGJVj/RVZtFnG4AfS4=,tag:iExr5wLSQxectanLRRiNSA==,type:str]
+        path: ENC[AES256_GCM,data:ew==,iv:7+lbvCJdJDt9RUQ8eU8T+8ewDii0/1q0xw75djKkmzA=,tag:41TzvPmmRpGvYOnnneOGOg==,type:str]
+    extraTls:
+      # sops:enc
+      - hosts:
+          - ENC[AES256_GCM,data:kfUMSep/GPmxqc8kB2A=,iv:0a9z6dw6rqWRCIvDPzIwtZ9C7fv19RIUEUNERU71lmU=,tag:jYD/11K2bRZ/kvniwo/i+g==,type:str]
+        secretName: ENC[AES256_GCM,data:vwDl2lgG7LCk/Pv96VImblEq,iv:/Avq7jv9LkL0O4Q7wYURgw320Op1OjQWrDaKX3hzxoM=,tag:IUbJhc1ZF7coshCMuH8FEg==,type:str]
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
       haproxy.org/forwarded-for: "true"
@@ -18,7 +23,7 @@ keycloak:
     enabled: true
     tls: true
     # sops:enc
-    hostname: ENC[AES256_GCM,data:G8JX3SOzxNxWvSr6WRMWkRhCjGRLRQkC,iv:pOq+twccbAivNfUfjNAbUAlHK2kS+MaaZNtRT3iAC+0=,tag:oo6oqOTq5nu9SiobH0IPjg==,type:str]
+    hostname: ENC[AES256_GCM,data:gQZ0lY1eNq2wMcwE9xYB1LBFo0CZkjIw,iv:2v4g+0Ov34U17DCJ+oG/cFWHCh1lZzn1WhHfPmCkvSU=,tag:GDaZvQsguWVP/t63YJbReA==,type:str]
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
       haproxy.org/forwarded-for: "true"
@@ -29,12 +34,12 @@ keycloak:
   auth:
     adminUser: admin
     # sops:enc
-    adminPassword: ENC[AES256_GCM,data:9LT9pW4ydhBlXWrgMMBIqHugv0Os1ZsXRgDPtqqEBR2Bjuw+REdc/LbgyUk7eOPEvsw4Qq1iC95WID3SvW8l1CdaKavFquhBRiK0IKH91qnwCuSiyORU46K/OreTXCM0j+UkKrrUnQYUkxW4IDzDL4yLH0hq21wIIK3HwOxvVsQ=,iv:mozPGMA7sqGLZDqk3F+YnQDH1gj2dOf/VBDvIqkIroE=,tag:y+rQOjEse9wPrZN6GJLUgA==,type:str]
+    adminPassword: ENC[AES256_GCM,data:Sf9K1L0nYBmt+VHx2IjEnpCfCxJcjrZ69Dpt9sUQNzAH7V5oYgcpCPQAfBFCPjZzTHnKv9Bld5oPHcCmkANhQeIkv3yIttyrK8pxf2Zc5jLr/v/amSj4G8+QlqRBp0EZKQ2za93VTacMIAx9S/Mwk4dBDeAOc3F3ipnu6wz7mU8=,iv:Gdr5S+LeAwHEpH9CB7kcXdyHl0C8ip9aIQU7yxTalhQ=,tag:I29G2rrrNJWDChWIlMPWSw==,type:str]
   postgresql:
     # sops:enc
     auth:
-      postgresPassword: ENC[AES256_GCM,data:02gKUBS1c6l8Mg==,iv:XTMOdtzBRWnZx67QTnRZdI8Ld4KhenMjYU/bPHEpV+k=,tag:PFQeYXzwTmNaqeS8ZMKowQ==,type:str]
-      password: ENC[AES256_GCM,data:l3h5GCHftW7fKA==,iv:B7U3xGsVVqk5tr4BonQT/iDBzNlZgOp2483jREjs7Ec=,tag:50Ja162Ya2BWStNzaJsjOg==,type:str]
+      postgresPassword: ENC[AES256_GCM,data:FKEXBl3s7LLpIA==,iv:HqfUkRAztzLgrDqW2HI6QOEd5SsZtuHU8X41TM8jAks=,tag:DBwOJ9TCXYKdhtmgQcR6ww==,type:str]
+      password: ENC[AES256_GCM,data:/eA8NlSQvXunZQ==,iv:ov9FxT95I+x2TCp74aGaP8Ie5yd9/Qvt9jijkF56xoU=,tag:B1YPKs0sLQlnGGRegf51WQ==,type:str]
 sops:
   kms: []
   gcp_kms: []
@@ -44,14 +49,14 @@ sops:
     - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
       enc: |
         -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSArMjVBT1hNQkNxK3RjUUY0
-        dzkwTVdTWUhCS1pJcDVZMllzdFBLZmVQY0NFCm5GU0JuWWM2Wk9MMmV4U3N4MGtF
-        WGpabnFCNnlYL1JIZC9hSThPRVErQ1UKLS0tIHpQRCtXdThQRlZOY2o0RkFVZEhq
-        aE51MmZqR0hwTHQxd1M2b1JnUy82dncKlr3NtJvvpluiKoTvg2fY0MOgQifhntMk
-        T0GE6MhEvmEpqxlzLtKPvd3nF1gaOQPdOS1Tris65lVaBiZjyPjK0w==
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBNGVGdXpQQ0dyYWxzUm1W
+        clZ1WFRMaFhNOUpYdTFpalJwdUFiT0I1K2pjCm9KV3VJV0d1d0hzMkRneWdQY1l3
+        dW9CcXlHSnRTYTBuR1hUNmZFbnc1Z1UKLS0tIFBXdVpFaTlhMy9GcDNITnQ3c1JX
+        N0ZwaEJEdlliYUZHVUltcG5kUUg2cU0KDelhZjTtSJoMzvQDnO1Q/94Z26RUmmjU
+        udg2Zn8e6Lyw/GfiGUO2QTBRMFkW92job6iuRgozu0yhuOTrM7K7dw==
         -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2024-08-11T19:44:26Z"
-  mac: ENC[AES256_GCM,data:7SFUZEWJeLd9m2osCdDjwFBTwRUzbdL6EJIH0+kqHDZSqGI24zoDw8OYz5a6MvPqahjL5Jm2+EdBnseBLFw9QvvK7R8UlPmMEzx9rbP4S80kwkpgBTgXWqc/0CdupIHpTKcnlvxNuQrg7ILzoeYNp+0xs0Z3+llPm2OQn5gJLyw=,iv:DUM/aqnuMt7tSZ0SSCUWl1dHspR7yGSqavdChbNdXlg=,tag:l27U4V8HpfNyBkMAjK7YIA==,type:str]
+  lastmodified: "2024-08-11T20:01:52Z"
+  mac: ENC[AES256_GCM,data:g4nP5VPE1EHv38j0diLTa4CfWLZIdiFt0yJMnOK/hmhPrWOof2yWCMnW66rXLUZ+iYRqm9ldtYdVKsGcGcL0nH1Y7inU83n/Vc6NLYvoIYxCxDK5bABxSkUtwnRm5NgTnATpo0FhUi5MOSyiifvetNqviEvoZ2gvCcxR8/tBfqA=,iv:id+B2vOEuv6rYrw58Jirq6eQROwO6aU704/Nbft00TA=,tag:OMxXHfWwhvLJ+xoYvX7jqw==,type:str]
   pgp: []
   encrypted_comment_regex: sops:enc
   mac_only_encrypted: true
