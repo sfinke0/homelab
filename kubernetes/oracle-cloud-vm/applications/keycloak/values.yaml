@@ -6,11 +6,11 @@ keycloak:
     enabled: true
     tls: true
     # sops:enc
-    hostname: ENC[AES256_GCM,data:gJTSHp0hnVBxe/HcOTWRfdrp,iv:jzy3mmaA+mdvv34a5Olvj41ks2VVBKij1SIC5WAvqsU=,tag:sdgCHPakik+Q8gG6Pktosw==,type:str]
+    hostname: ENC[AES256_GCM,data:dh/WUsDFiClrPa4eTzNvxPw8,iv:fQf/1D2EV5lRdt2kc+eaMiou9OeBNxhGp3gMs07TLiw=,tag:KfaSY0C7wuwYpnL8n5rLFA==,type:str]
     extraHosts:
       # sops:enc
-      - name: ENC[AES256_GCM,data:mBVsJqmlRAo59jQzmoE=,iv:l//QLLIdYQlZkEALDYEPKi64RgqJb4BUWuR+N+JXda0=,tag:GoDeMVgXhx3ac8LW3BoU0A==,type:str]
-        path: ENC[AES256_GCM,data:ug==,iv:YP6zwjMM7rIWbIu80xFRnfQMPzIxUhzh4X76B9fc67Y=,tag:J0beNptFDVPJbVyGG7yt3w==,type:str]
+      - name: ENC[AES256_GCM,data:Tk0LGKEgXBsybAvSYUY=,iv:KOzTHH54h20WtK3Z6+nhhnDV2lNpzXAf+2/pXSHhW9M=,tag:KcrStqU6GgWFcMFr2lmEaw==,type:str]
+        path: ENC[AES256_GCM,data:vQ==,iv:AhtWwZjTY5c4KFs3BpcXo1XFX6JGlTsJYyIgKGM8nB0=,tag:DI00hdHHENOmG+j5KCMDlw==,type:str]
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
       haproxy.org/forwarded-for: "true"
@@ -18,7 +18,7 @@ keycloak:
     enabled: true
     tls: true
     # sops:enc
-    hostname: ENC[AES256_GCM,data:OZLY8i6msFVriH5KL/KgFs+99LiyA1DA,iv:pC0BxYjKuDSfSxgEVr5fcITKMsm0eAIQWzM6RIO4/y0=,tag:YzKMdnWTHgAln/9WduKjDQ==,type:str]
+    hostname: ENC[AES256_GCM,data:l7tYDDkUIM1tjZSDwxFJ5xErWC9KuMtM,iv:5pyb1GBnu5QB891bjG32RN7O1ZefQCJcKFlfK5+b9Hk=,tag:wqjd3fViBwViJYUbYlX8KQ==,type:str]
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
       haproxy.org/forwarded-for: "true"
@@ -29,7 +29,10 @@ keycloak:
   auth:
     adminUser: admin
     # sops:enc
-    adminPassword: ENC[AES256_GCM,data:MOM/yyjNdrIUiYHBw6ohCZEGDTmG28GWhgfxVniXwt/tySX1Ybk95ZX6MBNEXIp76y1m+1h4LFJVty4M1qFGkhgiEmtdlAnFKoz9jc09DmKfmSIunq8mc5QioJDONO6/lg3wyd9QoEjRB2fqX4GzUNKsGtRALG+NTBXpErBvROo=,iv:ZnjAf109Q1xMcy2nRNo+aWkkpW8WS5uHzgbKKsr7E2U=,tag:FMI4I0Y6/IQYpm9GW9hyJQ==,type:str]
+    adminPassword: ENC[AES256_GCM,data:y0/jV6vVL7Keh6bqYqtPM+OO5TSCfqzWyupfFWJRw1jOyt2DnhBAS+t3t6RRO9awDeTcHGfMELdr6hO4sX1OYor5GheL32NHLWxMpNc5c/oLa9DzmWWGR6AXnCWMFG6edPCShnZZSKGZLLOBklE0WRS8s7hLGn0R2tOr7s9o6TU=,iv:qNDMvX2rQrki/DBIsgKmBjh7w/38GDPNyQD6Jpdsers=,tag:YOQ4WIYj+byfBcJFTopTkQ==,type:str]
+  postgresql:
+    # sops:enc
+    postgresqlPassword: ENC[AES256_GCM,data:FmZ59oWlhp/UGw==,iv:tHsJcaz5iu0qdJk6X9O7Ww8FinEwoh6iQRb/DNAqI5E=,tag:ZhX4RFIV5y3N6+FyvpFF/A==,type:str]
 sops:
   kms: []
   gcp_kms: []
@@ -39,14 +42,14 @@ sops:
     - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
       enc: |
         -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBXbjVqVk5ZUUVNRVJuUmhr
-        ZUE3bGhSMjVRU2VYUXpYQTNtRzBsVHIvOW13CmpzdDBiTCt2ZDJ1Z0dQZm9wNTZo
-        K2lITllJbklReUZBQitNSnNuY25XTmMKLS0tIFdicEppYVRhcDEzRjg5RGlrZENu
-        N0YrTVZLSGUwVHE1VHh5S0lqaWVGYjAK86ReQ10CC4+wEC4FZFeV9r+nmfidSf+0
-        McsGrEfIsAZrpsyPfEIfoyvnCnX7mq/EPd0HEFQ4/cg118zh2TgVgQ==
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA4L3o2MTE5WWVCTG1aZ3pS
+        cTJ5Zk5kTlp3bm44MU0rdjhyZFhEbUFhU1ZnCjJhWlp2SUw4TXBtTDczSVFVb1du
+        cVJia2wrNk1GbElxazNIaU9LUGJxL1EKLS0tICsrUDdoMHlWeFpJcnpzQ01WL2tD
+        ZEVFNEhjQ2Ztek84ZjI1ajcvWVcxMVkKx7hkz7+rxM9HtXKH1gY5zxEOMg/96Gaj
+        q+OjmvKm4Gi4Ao2d6+NYqikSB+TVBXAg+BFmaaPHuC/gj9sb8cO1ZA==
         -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2024-08-11T18:03:25Z"
-  mac: ENC[AES256_GCM,data:02IyjxZP7OqBjjfJYToyp92puQKTEeDmItEX+kHQyOtbp6dqDb6Gx/JLKxASD9PBESSxMQS/rKihpMTd12y3Vzq2TBa50Xc0+1ISFhyZrXt4sMDX13JsH+3xwyFN/NcCqkRET3lHysb5qJqjRFA33ajcqgT2V1Dx3Tqdw8VJ/XI=,iv:KTwE4yOtiSJnKWDY4EKmiwbif8p2tx4vTV7aI3TSozw=,tag:OkXa4N7yyz9Bryvs6zUnUw==,type:str]
+  lastmodified: "2024-08-11T19:04:05Z"
+  mac: ENC[AES256_GCM,data:NqWiD6TKn8mD1kwN8ykKra5wvN4KGP2uBmm07HxNRycc9sVDFgnRnYESzNxzY9cBjBFa+lhVzL3+P5w5P7GY/fXAIdJ3xr8/EvJ+2GtAeMvwFVmEXbM2pFimLMc97ySPPD2XN0HDitKeIJbEGfgVeb9P7py/CElIdYKntnqilm4=,iv:icWok51mcPtRYo5EbH0/mvgvGgzOXU/MKjFajKmENcI=,tag:deC2aVOe7ymnZXNWc/iqQg==,type:str]
   pgp: []
   encrypted_comment_regex: sops:enc
   mac_only_encrypted: true
