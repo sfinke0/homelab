@@ -1,3 +1,6 @@
+global:
+  domain: argocd.pewpew.network
+
 argo-cd:
   fullnameOverride: argocd
   configs:
@@ -7,7 +10,16 @@ argo-cd:
         secrets+age-import, secrets+age-import-kubernetes,
         secrets, secrets+literal,
         https
+  controller:
+    resources:
+      requests:
+        cpu: 50m
+        memory: 1Gi
   repoServer:
+    resources:
+      requests:
+        cpu: 10m
+        memory: 512Mi
     env:
       - name: HELM_PLUGINS
         value: /gitops-tools/helm-plugins/
@@ -83,10 +95,48 @@ argo-cd:
         volumeMounts:
           - mountPath: /gitops-tools
             name: gitops-tools
+  server:
+    ingress:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        haproxy.org/forwarded-for: "true"
+        haproxy.org/server-ssl: "true"
+      extraTls:
+        - hosts:
+            - argocd.pewpew.network
+          secretName: argocd-cert
+    resources:
+      requests:
+        cpu: 10m
+        memory: 256Mi
+  dex:
+    resources:
+      requests:
+        cpu: 10m
+        memory: 32Mi
+  redis:
+    resources:
+      requests:
+        cpu: 10m
+        memory: 64Mi
+  applicationSet:
+    resources:
+      requests:
+        cpu: 50m
+        memory: 128Mi
+  notifications:
+    resources:
+      requests:
+        cpu: 10m
+        memory: 256Mi
 
 argocd-apps:
   applicationsets:
     root:
+      ignoreApplicationDifferences:
+        - jsonPointers:
+            - /spec/syncPolicy
       goTemplate: true
       namespace: argocd
       generators:
@@ -98,7 +148,13 @@ argocd-apps:
       template:
         metadata:
           name: '{{.path.basename}}'
+          annotations:
+            argocd.argoproj.io/compare-options: ServerSideDiff=true
         spec:
+          ignoreDifferences:
+            - kind: Service
+              jqPathExpressions:
+                - '.status.loadBalancer.ingress[].ipMode'
           destination:
             name: in-cluster
             namespace: '{{.namespace}}'

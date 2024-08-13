@@ -13,9 +13,7 @@ cilium:
   ipam:
     operator:
       clusterPoolIPv4PodCIDRList: 100.64.0.0/16
+      clusterPoolIPv4MaskSize: 22
 
-  #routingMode: native
-  #bpf:
-  #  masquerade: true
-
-  #kubeProxyReplacement: true
+  # this makes us see the real client IPs
+  kubeProxyReplacement: true
