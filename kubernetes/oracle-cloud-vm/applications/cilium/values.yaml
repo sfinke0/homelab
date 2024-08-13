@@ -14,8 +14,8 @@ cilium:
     operator:
       clusterPoolIPv4PodCIDRList: 100.64.0.0/16
 
-  routingMode: native
-  bpf:
-    masquerade: true
+  #routingMode: native
+  #bpf:
+  #  masquerade: true
 
-  kubeProxyReplacement: true
+  #kubeProxyReplacement: true
