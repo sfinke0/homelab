@@ -3,7 +3,7 @@ cilium:
     replicas: 1
 
   envoy:
-    create: false
+    enabled: false
 
   # https://docs.cilium.io/en/latest/network/node-ipam/
   # this requires cilium 1.16.0 which is not stable yet
