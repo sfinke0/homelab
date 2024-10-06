@@ -1,19 +1,19 @@
 windmill:
   postgresql:
     primary:
-      resources: {}
+      resources: null
     auth:
       # sops:enc
-      postgresPassword: ENC[AES256_GCM,data:71RQNytPuxR3zzYwbEBEHGn+ToYT2urgkDDW2yWVXqnnxSzfbIDPoLrt9aVyFK16hp926FSst8TJF2xWMxqwGQ==,iv:O6DpoonK8QTYVQNYjic0ydkkeR7mENP+IhAWBYsAkPY=,tag:qSfR25/7/LbGJPTk1Hgu0w==,type:str]
+      postgresPassword: ENC[AES256_GCM,data:Wd0FxrwGNV1Fs8Xs/NLYrlf0CcKmUkI/Xc2Yn2vCe1VERaj7TcW+z7kdnaa73QlTrDvyYTm70wF9yQepuWIHQQ==,iv:vCaVj7prXmQ8Tz2eQsywQjYWgydJf5TN8sbD/5803xg=,tag:S3x3KcBPM24ced3Y/rkmuA==,type:str]
   windmill:
     app:
       resources: null
     appReplicas: 1
     lspReplicas: 1
     # sops:enc
-    databaseUrl: ENC[AES256_GCM,data:xsVeT6nEPTKsyzMZ3nXgrjSIj9tnMmuHAXsMSWTLcZdGM7P7/O1PbFNebvUJzZfR6qjZlbY3de1DBu7Tjrs3DIlolGHdhZoGBXOxvpw4cvdY5dDekIZprAwwjjURvkPJB1jLfOWEOJAYpo+w2DnzNTGkNipUp11TnDaCjJV+VvQC,iv:Bep1JkrgIklJe/RDrzv0E1O25+0Pyg6koyQMt/tqrmg=,tag:ebeoQFidbMSrE/5rVwXe0A==,type:str]
+    databaseUrl: ENC[AES256_GCM,data:S4kacd8ATZPUKQCHCcT7gRYQrveT57Mn8kooFqNj2VmNTJexPcLm3Fl//fsuF5Q7Jw+DDKZFvZXK28k9ZfuwT/KljnBnH7GfW6aDJEU0fDLWVyf9GYSudsxBCv5ndY5Q8D2+hRDMNW7pyXNlxpdZdT2nmhrFZN/v9+lwSOwtGTh5,iv:ymOI3z6GiWCm4RfGdtkUuE5T5U4m2Gd8QZYAHQL241g=,tag:lVhNfpyKZ7tq4Euxvpg/NQ==,type:str]
     # sops:enc
-    baseDomain: ENC[AES256_GCM,data:+Iax2qKajkCVZrOseB9hKErPbUsh,iv:ZxVR6Xva76D+qlIhO6gGVAACWNgA2yyM3IIR4PmnPbc=,tag:DNHe8on9EX9/UOS9iQ4lRQ==,type:str]
+    baseDomain: ENC[AES256_GCM,data:+9Gjk9nF5BJ/+WX9uy4C2Tin9Drt,iv:45qD80x0rN8rLaufeXvCurazP73gkBuYVJzq08oFfag=,tag:ZBGf58mRwtyZ3RuvHzwQ8w==,type:str]
     baseProtocol: https
     # copied due to array :(
     workerGroups:
@@ -75,10 +75,7 @@ windmill:
         # -- Affinity rules to apply to the pods
         affinity: {}
         # -- Resource limits and requests for the pods
-        resources:
-          limits:
-            cpu: "1"
-            memory: 2Gi
+        resources: {}
         # -- Extra environment variables to apply to the pods
         extraEnv:
           - name: NUM_WORKERS
@@ -126,11 +123,11 @@ windmill:
       cert-manager.io/cluster-issuer: letsencrypt-prod
     hosts:
       # sops:enc
-      - ENC[AES256_GCM,data:1JY9tXPVhMvG1KiFYvQ4fB2Spq3/,iv:bpYelGXP+N7JU+GwAJ3k/JEdrImDAR1LThKp5pBewpg=,tag:ZNVV64VRGAXpKJi0hwJR8Q==,type:str]
+      - ENC[AES256_GCM,data:xp8I1IPvwBiGsYF81izx+F6KZblx,iv:VyGkf+Z9iNajfzXCTPXCuZXvQJPrQZ07m66swPJxPSo=,tag:qEr6lojEpxnuleOOBowG6w==,type:str]
     tls:
       - hosts:
           # sops:enc
-          - ENC[AES256_GCM,data:CewrkeNkf/bo6gDDvcXMzYrXrVIg,iv:Yc4ptg0KgKD2Ep5MSqzykjlaBGazRZMdXRm977ij5mY=,tag:t91W5vQl70YUZl+na0dDxA==,type:str]
+          - ENC[AES256_GCM,data:8AE0/HaHTxc3Da504jC6y5DPDYj7,iv:5w4ItW4y77p7ZmjS//xBJMUdSO3ow3f/4zg/Bpk3Lf4=,tag:Tro2++1/w5H8JX2FpGiGFQ==,type:str]
         secretName: windmill-cert
 sops:
   kms: []
@@ -141,14 +138,14 @@ sops:
     - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
       enc: |
         -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBnV0x6eFJTVCtHbVNIdUd1
-        UHhqNmFpYzFOY1prN05YUUE4bWpadGNFeHdvClVWWW1yVngvU1JZT2h5QU43VUxU
-        YnpXWXZndHpEekJXWTJ2MGpuc0VKaVUKLS0tIHJFN0xhcDRIb2hPaENlNW4xeE5F
-        ZE0wa3pyUmtNeVkyVWJjaFhER3ZyL0UKnDbr8fgtcE98AMTSbt48DUc6gLo9A68N
-        eUyH3AdceZ9i+7v/w82+tH/TWIMvZIj5zsYI3+pdy7Rxt1QKqgelqw==
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBmZDV4bTN1MHFyS0dTUE1o
+        NVpTZHpETkRoYmd5OU1kZzd0MUpYUVJWcUhrClVTeE15aTBvRmxVWmhHOUpSeDVk
+        SndVeVNKOHUwcFU2dzNjc1RZVTF5SlUKLS0tIEcyUExoMUI1cXB2U0VPYVRWTGx2
+        ZVl0cmhoc0VmOCtnblhCU0RrYmtlMmcKCbdqPdsIelkuPKb7TaZnxjxMjAdDz1kf
+        OTkdKgqYGyShaScctC71EE1Cij68YlY53ZUMNrysmypPu1zQGxyG9Q==
         -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2024-10-06T13:35:40Z"
-  mac: ENC[AES256_GCM,data:el1o2ari+m4SNxrYmMCdm3xNJ37ditwhedE+ERCcsZdWThgBV7gzg91QrzBduod3r/JnvNDr0r5mPdp6zl53sxNH7RJpN3Xjgd8vsf8Hk+WrnNWu0iGb0MjmnG+v4FLNT0OnhzOF9Fkgtx5EayrmBvKYvnsiFHl9xjfWHVJ6x/c=,iv:P7D0GF8AieL7SWYE5XTfKex+v5AkPdpq5LMSiXdy2DQ=,tag:RStFMSrHIdaj+yXxk35HkQ==,type:str]
+  lastmodified: "2024-10-06T13:42:15Z"
+  mac: ENC[AES256_GCM,data:o5gNeXOkWQerUjuc5RnxoLKAS2hWePdQajMxV61J997lQsE+v+4xuolqmr4fsk6NmBR38yggm57DoK7uDcpqJC/EJgimGv7yOAsenGMkefljV9Upb8rbLq8lt1wwlWiWuDZad6SMLRCfK2P0jYnlXG8fa7mgRwbam7nhWyyCBFU=,iv:JmzkoMuE3XrQEfRTiuFO0aAT9PIpxtSyzNQomSYDtj0=,tag:GL5pnxZleapnKKFOUBQOFw==,type:str]
   pgp: []
   encrypted_comment_regex: sops:enc
   mac_only_encrypted: true
