@@ -4,14 +4,17 @@ windmill:
       resources: {}
     auth:
       # sops:enc
-      postgresPassword: ENC[AES256_GCM,data:V4XdPlvziNBGJhnV+3JeoBbNm03uEFb7NSaPd3YQxnt1MoZJRa9SKmWYYEGonfgpgas0OdJlgUf+IE+6iDsJKQ==,iv:xKlfqoMdUEi4YSPcYNGVVIvdvJ+r/i1//sIYzfBloh8=,tag:S1kDVu0i9Z8rdAdJlC2n7A==,type:str]
+      postgresPassword: ENC[AES256_GCM,data:aIxPFYCFSsl82+UXmrP4bxqD5vjcQTDQd06kf/iiZolfoeQrAH/IyNCpfIfVt1KzNqkEuILLvFMTnB8vg0saww==,iv:y6p04rqq5tPYMxPA0FYa+R5K9UeIi7RRa0nSXLyz+ao=,tag:f5Zjli7MnBQxdXi9ZQLbMw==,type:str]
   windmill:
     app:
       resources: {}
     appReplicas: 1
     lspReplicas: 1
     # sops:enc
-    databaseUrl: ENC[AES256_GCM,data:UAvT8yloDzfSCywACsvkgO9/An8eVab6DdhpvIZH+9b5Tb7dKDDox17zPkg4X1eLqLXkuuf8gUPiZwuXQ41ROwCOtWhsTlDW/E6UUNgSXTEO4qFVU38DMvZlNM1CH/BS2otute9TcPY5rKlTdnEdLmStZ97N4iV/Se0M9FMLzmCD,iv:xI77I++JCjYSS0pFEbAtrMSndcvmGtfLMu2bBOt1sTo=,tag:8dbgfbQxCS6Q1exaF/WfVQ==,type:str]
+    databaseUrl: ENC[AES256_GCM,data:lhYxGuA+FGRhIS39X/jpnB+rnpgNO1xo+ex2TOZSA3TvlnbXJvlLJGs5b8te+DZ6tURwSHw1kZbuUxX+wLGIGDw7+9eUFjojGKcKAI/4r5dGQ1Lecdnw0+CCRGWk5IXc0v0M/Zdb2aDk+uzmGFBHSJQpUmYnPNJLetpcPmDoVbQ2,iv:EbmT4EyBhP2EqI3Qzxdb4Og+66at1CCZH/ltxLm8AOA=,tag:SLXInrOpO8vkpRY+ymeQqQ==,type:str]
+    # sops:enc
+    baseDomain: ENC[AES256_GCM,data:kcvvoDS4u/8ZX8ErgURGbuFaKbUn,iv:PEE6jonhXmU0viw/3zgTZe9F79+9N4+w5+GkbEqGXcE=,tag:ccU2EWteLtyUx9Liw9Dkxw==,type:str]
+    baseProtocol: https
     # copied due to array :(
     workerGroups:
       # workers configuration
@@ -123,11 +126,11 @@ windmill:
       cert-manager.io/cluster-issuer: letsencrypt-prod
     hosts:
       # sops:enc
-      - ENC[AES256_GCM,data:9bicLojCFIf+qOdwDpAJGTGt8Obo,iv:qYNvx5hx2Hg/SlFGiLBqzpLMS1rvPpJAp+LL7EGUtOY=,tag:X/vyLQuofgSUzLcEEqC2Ug==,type:str]
+      - ENC[AES256_GCM,data:AobSvLtLQjDd+rgdEEgGl+DRr7d1,iv:2/Eg1Ho8epDRZAnuK59tZyq1TviDa52jMmVOFHvocN4=,tag:j1rhQQb02hJf6sal8Ie8xA==,type:str]
     tls:
       - hosts:
           # sops:enc
-          - ENC[AES256_GCM,data:3/uEIinJU+zBVZeyp89a9NvYWG3C,iv:s/hs0dte29bvNl6OrSMtpeFPU5t0NVYHNhuBcDW2Glo=,tag:JRVN8u9Fb8NRpUTpqdbNjw==,type:str]
+          - ENC[AES256_GCM,data:0Q8w8yaCC8wYCs8fi9drJ855bTPy,iv:9z+V88RT8FeyuwbhcFfztfvF1QLEMNEPRnUOexfw7Sw=,tag:OTkXxsguiODgh2ExX6AL9Q==,type:str]
         secretName: windmill-cert
 sops:
   kms: []
@@ -138,14 +141,14 @@ sops:
     - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
       enc: |
         -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBEaXc0YjBDeDdKekpFeVVP
-        ZkEvRWlLNVlncXpGeU5TejVBcHUwR2xEVzM0CjZqWVhDYTFLMzg4YThTWFlEQUtB
-        d2ZBVHc3K1J2T3BNSm1IdXJhanNiTmMKLS0tIGZESlBiQU1TeGFLZ1FKMFJ0eG11
-        UUZ4OHFqRlJPZlV6eTVqQ1hJbnF3RnMK9hxLrvqa+6KuiA80vcLoRkPYGp1eKkQ4
-        QckXVWLw59NQ50vGhB82/UXjv/Ud6sWgJX9T0LTfVxUjpCvjnGlciw==
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBFV0Q2Zktza2p6djBzNUFu
+        Y2FuUXliVWwrR0hiMVZNRndwMklWbkF4YTFvClBDdHhpY3NiamZneHZNZWFsbkxU
+        M1BaTStUQTYxd2E0MDR3cUd4YnJ5MHcKLS0tIHpkcGI0VTYxZ3A2WGdDNzBNcVlU
+        YndSd0dwU1J1Wm1TMjhCaXhtZklUUjQKj41WNOaoJD2Btxhe5tna3BPTjwOujm0m
+        bTfv0cem9+5a6nqCl/2uZS7koHncDhQnDdmu1RAXnys5KYunl7LehA==
         -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2024-10-06T10:20:06Z"
-  mac: ENC[AES256_GCM,data:am8Fap1HHrzZpd1lPnF5pTlFNUHA/Ab7bOI7LpjFwhXf4Ur00eDJCnrFpr0b3j2Y7PJUrql7f1hMmmymtPF7URnq2846jZD+OVKm4MpAD+wyT5a4jX/TriZh7XIbnrsLOPpx28N5V1jnIx5AqVLttNZ/5+Dm/cw9dhfUl38P/Ps=,iv:igTur1/8yOpMuLKoDpMvrvvCV37HzZMI+SpvGJ2cCPY=,tag:V0NLFI1zmHgHleyreLHjOA==,type:str]
+  lastmodified: "2024-10-06T13:24:33Z"
+  mac: ENC[AES256_GCM,data:0eBxBdrxDdwWXQOoNpgSCSs/NKdUt587lPxQcUtgdDUGQ+H6j06rJ9PNDK/9v9rQoTvXM9zztcUNbI+y3LjP62yKDQOjfBOQV3q1br98g8+MOyThsiyoMzw3DoruCIhMJUxdRoz3ft4HiWiedUrx46Ibfa8ie5uzPhTWeHZORsI=,iv:VFGiqLhBi9JrLsLVOAU/YLVhd/DoBbJO27xYIuofiNo=,tag:qCC24xGZRvB6FMqujYlRGw==,type:str]
   pgp: []
   encrypted_comment_regex: sops:enc
   mac_only_encrypted: true
