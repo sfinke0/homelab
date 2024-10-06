@@ -1,0 +1,40 @@
+windmill:
+  postgresql:
+    auth:
+      # sops:enc
+      postgresPassword: ENC[AES256_GCM,data:TAtoXh4lSuT7Uet5jnyOyvYF+1dNEOTcMv29c7jFIBKwTV3cs4Ja+Sy+P9wHICL158dPgjFiQxQ/VVRBMN3B6g==,iv:iF9muIE1ujeYPBWIOu5xP2FPDykOv9qer2tuRMvP/k0=,tag:PtDM8NVGQP12r64Cp+tsFg==,type:str]
+  windmill:
+    # sops:enc
+    databaseUrl: ENC[AES256_GCM,data:TJsA6jIKlFmXNptomYhBQjKvbMGQyzCrn9CUfCvLQQBa7t+9Ht0kw/cq+M5UlTJJs/C8JDWr29Bk34E4Sv+Uhl8uu6v9UoRHS1Pp6uHWYcJgIohxspPXWuHGwfCjZ10XBxXzfmnProyloevpg2l+9/gZGoFz5uCqpYMRdJDC+V22,iv:odXN/RZcbxiTwBQms5iWQct3p+5wc1O0b0BMrXlKAME=,tag:1Wj/9OHoYtSQdMhVPKRGBA==,type:str]
+  ingress:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+    hosts:
+      # sops:enc
+      - ENC[AES256_GCM,data:Ry+2xW5Vfoy8LZT2uoaZa8S7aSsd,iv:9cOGGzmcVQKGe4nWu3S+hb79lpl6+fbVWCwGjqG68nU=,tag:5tmHXI71E9jX+Vhp54x9FQ==,type:str]
+    tls:
+      - hosts:
+          # sops:enc
+          - ENC[AES256_GCM,data:/RVv9KRD9kITwq6zEFUTy4XpGy0B,iv:6mppvIx0m27QVwdJfPkGo+9HlHptt0s/L6nLjRdCs4Q=,tag:TkZUitUX+8w3ygEsnv7feA==,type:str]
+        secretName: windmill-cert
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBWRkx0QU8yczBoYVZBZDd5
+        eVhna1VsYmsvRUhKQzJYeDRVU2o5bzlwWEhBCmpORHROK0ZPbC9pcU90QzVYanBn
+        dmIwTTZSMWNKQlBJMnRzSlpQOFhZQncKLS0tIHgxd3Fvb3hIS1YzL2xuOXlZOHMw
+        eXp3aTh4SjA1Y2taaWFlMnlta3ZnamsKcRQ8FYnXySliGQHFf87/IU+3oARLSmXo
+        gwccyQ8aG4L2WuAJbocrdtHQyjb4yd3iPl0EAq30YBUkSxlCDOteTw==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2024-10-06T08:18:36Z"
+  mac: ENC[AES256_GCM,data:N0p1FmSo/uMrup4jGnhr3T0Qp+Z1dAek2kfd4ahrnXL+ZvTgCJBAzbiP8mjqVm1qic97cz5yu+Jo88/7d1muVwh5zr0nPZQ3ek2dI5n2Gp4+/sh9oaXK2yGBnsxwrhQHsZewoOO9noqeTzODj7cCiAe6l+WxZNQT6r4kkp6dEW0=,iv:hXnVJ3lbGf1mhonjWNn9uoFp3qKW6xryhlLHrR1B1jo=,tag:LP8WImfbTNyPJiQSq48dnQ==,type:str]
+  pgp: []
+  encrypted_comment_regex: sops:enc
+  mac_only_encrypted: true
+  version: 3.9.0
