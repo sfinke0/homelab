@@ -4,24 +4,130 @@ windmill:
       resources: {}
     auth:
       # sops:enc
-      postgresPassword: ENC[AES256_GCM,data:wMm80n5jSUEnwHrHCs+0FNz1q3QGfLxXq8gQMR4fnnk+5bfF3tm+KgJX/OYkgowC5FR4CytJQZKkxIUvwsmZUQ==,iv:xHX3Afd2S41XjZ6tm43C34bZT2hvdlKNRSc1jSUkVQ0=,tag:/3EOuICJQHKuxiXvQskopw==,type:str]
+      postgresPassword: ENC[AES256_GCM,data:V4XdPlvziNBGJhnV+3JeoBbNm03uEFb7NSaPd3YQxnt1MoZJRa9SKmWYYEGonfgpgas0OdJlgUf+IE+6iDsJKQ==,iv:xKlfqoMdUEi4YSPcYNGVVIvdvJ+r/i1//sIYzfBloh8=,tag:S1kDVu0i9Z8rdAdJlC2n7A==,type:str]
   windmill:
     app:
       resources: {}
     appReplicas: 1
     lspReplicas: 1
     # sops:enc
-    databaseUrl: ENC[AES256_GCM,data:Rz2hIMutYD67/MJglIohg2Xnb1MiioQplfDrtDh/z7f9ixd/Qu6d5iHKeIc6fp72O+HtSv6MxFjGUefABwDoROVbhb7LIMAbIw8Y4l6Ahc+OKHLjCbYqa91z84KBO31lQhEYiPFyL13tM/HMPXostZpYstxRbOSfX8iwm/EE/e/K,iv:pPfTag3JVNJYpjrWi7HwrYpBkfWnzLnjBiyjibOXcQE=,tag:HiX2iswX2xPE0lUpa3QSog==,type:str]
+    databaseUrl: ENC[AES256_GCM,data:UAvT8yloDzfSCywACsvkgO9/An8eVab6DdhpvIZH+9b5Tb7dKDDox17zPkg4X1eLqLXkuuf8gUPiZwuXQ41ROwCOtWhsTlDW/E6UUNgSXTEO4qFVU38DMvZlNM1CH/BS2otute9TcPY5rKlTdnEdLmStZ97N4iV/Se0M9FMLzmCD,iv:xI77I++JCjYSS0pFEbAtrMSndcvmGtfLMu2bBOt1sTo=,tag:8dbgfbQxCS6Q1exaF/WfVQ==,type:str]
+    # copied due to array :(
+    workerGroups:
+      # workers configuration
+      # The default worker group
+      - name: default
+        replicas: 1
+        # -- Annotations to apply to the pods
+        annotations: {}
+        # -- If a job is being ran, the container will wait for it to finish before terminating until this grace period
+        terminationGracePeriodSeconds: 300
+        # -- Labels to apply to the pods
+        labels: {}
+        # -- Node selector to use for scheduling the pods
+        nodeSelector: {}
+        # -- Tolerations to apply to the pods
+        tolerations: []
+        # -- Security context to apply to the container
+        podSecurityContext:
+          # -- run as user. The default is 0 for root user
+          runAsUser: 0
+          # -- run explicitly as a non-root user. The default is false.
+          runAsNonRoot: false
+        # -- Security context to apply to the pod
+        containerSecurityContext: {}
+        # -- Affinity rules to apply to the pods
+        affinity: {}
+        # -- Resource limits and requests for the pods
+        resources: {}
+        # -- Extra environment variables to apply to the pods
+        extraEnv: []
+        # -- Extra sidecar containers
+        extraContainers: []
+        mode: worker
+        # -- Init containers
+        initContainers: []
+        volumes: []
+        volumeMounts: []
+        # -- command override
+        command: []
+      - name: native
+        replicas: 1
+        # -- Annotations to apply to the pods
+        annotations: {}
+        # -- Labels to apply to the pods
+        labels: {}
+        # -- Node selector to use for scheduling the pods
+        nodeSelector: {}
+        # -- Tolerations to apply to the pods
+        tolerations: []
+        # -- Security context to apply to the container
+        podSecurityContext:
+          # -- run as user. The default is 0 for root user
+          runAsUser: 0
+          # -- run explicitly as a non-root user. The default is false.
+          runAsNonRoot: false
+        # -- Security context to apply to the pod
+        containerSecurityContext: {}
+        # -- Affinity rules to apply to the pods
+        affinity: {}
+        # -- Resource limits and requests for the pods
+        resources:
+          limits:
+            cpu: "1"
+            memory: 2Gi
+        # -- Extra environment variables to apply to the pods
+        extraEnv:
+          - name: NUM_WORKERS
+            value: "8"
+          - name: SLEEP_QUEUE
+            value: "200"
+        # -- Extra sidecar containers
+        extraContainers: []
+        mode: worker
+        volumes: []
+        volumeMounts: []
+      - name: gpu
+        replicas: 0
+        # -- Annotations to apply to the pods
+        annotations: {}
+        # -- Labels to apply to the pods
+        labels: {}
+        # -- Node selector to use for scheduling the pods
+        nodeSelector: {}
+        # -- Tolerations to apply to the pods
+        tolerations: []
+        # -- Security context to apply to the container
+        podSecurityContext:
+          # -- run as user. The default is 0 for root user
+          runAsUser: 0
+          # -- run explicitly as a non-root user. The default is false.
+          runAsNonRoot: false
+        # -- Security context to apply to the pod
+        containerSecurityContext: {}
+        # -- Affinity rules to apply to the pods
+        affinity: {}
+        # -- Resource limits and requests for the pods
+        resources: {}
+        # -- Extra environment variables to apply to the pods
+        extraEnv: []
+        # -- Extra sidecar containers
+        extraContainers: []
+        mode: worker
+        volumes: []
+        volumeMounts: []
+        # -- command override
+        command: []
   ingress:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
     hosts:
       # sops:enc
-      - ENC[AES256_GCM,data:z/m9KIBo7XixDfopipOpxLMqOyOY,iv:dwsGLwzNEkKYLHI1tJuX1MwCMMp5V0ES+6uEf1h1Qrg=,tag:A1yRzCDAROP+l+egZpA8rA==,type:str]
+      - ENC[AES256_GCM,data:9bicLojCFIf+qOdwDpAJGTGt8Obo,iv:qYNvx5hx2Hg/SlFGiLBqzpLMS1rvPpJAp+LL7EGUtOY=,tag:X/vyLQuofgSUzLcEEqC2Ug==,type:str]
     tls:
       - hosts:
           # sops:enc
-          - ENC[AES256_GCM,data:Pf+dp8t4krNLP8TysRk9QCzQM5he,iv:bQpzVzdyQ97gfBcuram5JomzuaV+SLwa81k4AFS2qgI=,tag:2aXKXqJfLrIvyeH8ms2fAA==,type:str]
+          - ENC[AES256_GCM,data:3/uEIinJU+zBVZeyp89a9NvYWG3C,iv:s/hs0dte29bvNl6OrSMtpeFPU5t0NVYHNhuBcDW2Glo=,tag:JRVN8u9Fb8NRpUTpqdbNjw==,type:str]
         secretName: windmill-cert
 sops:
   kms: []
@@ -32,14 +138,14 @@ sops:
     - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
       enc: |
         -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBXUTNtMy9qays2eXZWZUhs
-        SXpQN1JEUC8xNTJuVEUxMFAwZytkOXZvQUJ3CjdndlFUWjJwREFKSHUxNnFSUjVt
-        TEcwQWwwSGNhaHdVbnJCRm9xNWx4amcKLS0tIFZBQVJJOVhicFhFQUNVTGl5bzI5
-        M0RsbGtNbXVmWDJ5MGRMd2h6VU9XWWsKHIBptZE9lZba0y9uslmOBVwAFQRG4uGT
-        zGo4PlAsHl+5VotV26JPULLHaitwAPB0ryNxNw6AhvjTnack0qCBnA==
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBEaXc0YjBDeDdKekpFeVVP
+        ZkEvRWlLNVlncXpGeU5TejVBcHUwR2xEVzM0CjZqWVhDYTFLMzg4YThTWFlEQUtB
+        d2ZBVHc3K1J2T3BNSm1IdXJhanNiTmMKLS0tIGZESlBiQU1TeGFLZ1FKMFJ0eG11
+        UUZ4OHFqRlJPZlV6eTVqQ1hJbnF3RnMK9hxLrvqa+6KuiA80vcLoRkPYGp1eKkQ4
+        QckXVWLw59NQ50vGhB82/UXjv/Ud6sWgJX9T0LTfVxUjpCvjnGlciw==
         -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2024-10-06T10:11:14Z"
-  mac: ENC[AES256_GCM,data:MZlZQpVMhZUkN9H7nohsu2cyViy2FB1X1x9g+f2ZmRXVcu9oz1Gj4fm+SwIAP6pb5vo30YPqOiLw1X7hsitLzyR/fbsBR7UThhafC/FjkGghyWAGaIR4Ofr4Xk+ppmxa0X0dDnwA+W5FTJShqZQ5jRy+EXp7g+l32MF2ElpcvC8=,iv:APV4n13Rr8ngkihTGj69E7vLLQpTRR9Ymm+TewyJGcY=,tag:kLlGwyjxD94Hsj5w2RcdOg==,type:str]
+  lastmodified: "2024-10-06T10:20:06Z"
+  mac: ENC[AES256_GCM,data:am8Fap1HHrzZpd1lPnF5pTlFNUHA/Ab7bOI7LpjFwhXf4Ur00eDJCnrFpr0b3j2Y7PJUrql7f1hMmmymtPF7URnq2846jZD+OVKm4MpAD+wyT5a4jX/TriZh7XIbnrsLOPpx28N5V1jnIx5AqVLttNZ/5+Dm/cw9dhfUl38P/Ps=,iv:igTur1/8yOpMuLKoDpMvrvvCV37HzZMI+SpvGJ2cCPY=,tag:V0NLFI1zmHgHleyreLHjOA==,type:str]
   pgp: []
   encrypted_comment_regex: sops:enc
   mac_only_encrypted: true
