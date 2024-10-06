@@ -4,16 +4,16 @@ windmill:
       resources: {}
     auth:
       # sops:enc
-      postgresPassword: ENC[AES256_GCM,data:aIxPFYCFSsl82+UXmrP4bxqD5vjcQTDQd06kf/iiZolfoeQrAH/IyNCpfIfVt1KzNqkEuILLvFMTnB8vg0saww==,iv:y6p04rqq5tPYMxPA0FYa+R5K9UeIi7RRa0nSXLyz+ao=,tag:f5Zjli7MnBQxdXi9ZQLbMw==,type:str]
+      postgresPassword: ENC[AES256_GCM,data:71RQNytPuxR3zzYwbEBEHGn+ToYT2urgkDDW2yWVXqnnxSzfbIDPoLrt9aVyFK16hp926FSst8TJF2xWMxqwGQ==,iv:O6DpoonK8QTYVQNYjic0ydkkeR7mENP+IhAWBYsAkPY=,tag:qSfR25/7/LbGJPTk1Hgu0w==,type:str]
   windmill:
     app:
-      resources: {}
+      resources: null
     appReplicas: 1
     lspReplicas: 1
     # sops:enc
-    databaseUrl: ENC[AES256_GCM,data:lhYxGuA+FGRhIS39X/jpnB+rnpgNO1xo+ex2TOZSA3TvlnbXJvlLJGs5b8te+DZ6tURwSHw1kZbuUxX+wLGIGDw7+9eUFjojGKcKAI/4r5dGQ1Lecdnw0+CCRGWk5IXc0v0M/Zdb2aDk+uzmGFBHSJQpUmYnPNJLetpcPmDoVbQ2,iv:EbmT4EyBhP2EqI3Qzxdb4Og+66at1CCZH/ltxLm8AOA=,tag:SLXInrOpO8vkpRY+ymeQqQ==,type:str]
+    databaseUrl: ENC[AES256_GCM,data:xsVeT6nEPTKsyzMZ3nXgrjSIj9tnMmuHAXsMSWTLcZdGM7P7/O1PbFNebvUJzZfR6qjZlbY3de1DBu7Tjrs3DIlolGHdhZoGBXOxvpw4cvdY5dDekIZprAwwjjURvkPJB1jLfOWEOJAYpo+w2DnzNTGkNipUp11TnDaCjJV+VvQC,iv:Bep1JkrgIklJe/RDrzv0E1O25+0Pyg6koyQMt/tqrmg=,tag:ebeoQFidbMSrE/5rVwXe0A==,type:str]
     # sops:enc
-    baseDomain: ENC[AES256_GCM,data:kcvvoDS4u/8ZX8ErgURGbuFaKbUn,iv:PEE6jonhXmU0viw/3zgTZe9F79+9N4+w5+GkbEqGXcE=,tag:ccU2EWteLtyUx9Liw9Dkxw==,type:str]
+    baseDomain: ENC[AES256_GCM,data:+Iax2qKajkCVZrOseB9hKErPbUsh,iv:ZxVR6Xva76D+qlIhO6gGVAACWNgA2yyM3IIR4PmnPbc=,tag:DNHe8on9EX9/UOS9iQ4lRQ==,type:str]
     baseProtocol: https
     # copied due to array :(
     workerGroups:
@@ -126,11 +126,11 @@ windmill:
       cert-manager.io/cluster-issuer: letsencrypt-prod
     hosts:
       # sops:enc
-      - ENC[AES256_GCM,data:AobSvLtLQjDd+rgdEEgGl+DRr7d1,iv:2/Eg1Ho8epDRZAnuK59tZyq1TviDa52jMmVOFHvocN4=,tag:j1rhQQb02hJf6sal8Ie8xA==,type:str]
+      - ENC[AES256_GCM,data:1JY9tXPVhMvG1KiFYvQ4fB2Spq3/,iv:bpYelGXP+N7JU+GwAJ3k/JEdrImDAR1LThKp5pBewpg=,tag:ZNVV64VRGAXpKJi0hwJR8Q==,type:str]
     tls:
       - hosts:
           # sops:enc
-          - ENC[AES256_GCM,data:0Q8w8yaCC8wYCs8fi9drJ855bTPy,iv:9z+V88RT8FeyuwbhcFfztfvF1QLEMNEPRnUOexfw7Sw=,tag:OTkXxsguiODgh2ExX6AL9Q==,type:str]
+          - ENC[AES256_GCM,data:CewrkeNkf/bo6gDDvcXMzYrXrVIg,iv:Yc4ptg0KgKD2Ep5MSqzykjlaBGazRZMdXRm977ij5mY=,tag:t91W5vQl70YUZl+na0dDxA==,type:str]
         secretName: windmill-cert
 sops:
   kms: []
@@ -141,14 +141,14 @@ sops:
     - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
       enc: |
         -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBFV0Q2Zktza2p6djBzNUFu
-        Y2FuUXliVWwrR0hiMVZNRndwMklWbkF4YTFvClBDdHhpY3NiamZneHZNZWFsbkxU
-        M1BaTStUQTYxd2E0MDR3cUd4YnJ5MHcKLS0tIHpkcGI0VTYxZ3A2WGdDNzBNcVlU
-        YndSd0dwU1J1Wm1TMjhCaXhtZklUUjQKj41WNOaoJD2Btxhe5tna3BPTjwOujm0m
-        bTfv0cem9+5a6nqCl/2uZS7koHncDhQnDdmu1RAXnys5KYunl7LehA==
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBnV0x6eFJTVCtHbVNIdUd1
+        UHhqNmFpYzFOY1prN05YUUE4bWpadGNFeHdvClVWWW1yVngvU1JZT2h5QU43VUxU
+        YnpXWXZndHpEekJXWTJ2MGpuc0VKaVUKLS0tIHJFN0xhcDRIb2hPaENlNW4xeE5F
+        ZE0wa3pyUmtNeVkyVWJjaFhER3ZyL0UKnDbr8fgtcE98AMTSbt48DUc6gLo9A68N
+        eUyH3AdceZ9i+7v/w82+tH/TWIMvZIj5zsYI3+pdy7Rxt1QKqgelqw==
         -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2024-10-06T13:24:33Z"
-  mac: ENC[AES256_GCM,data:0eBxBdrxDdwWXQOoNpgSCSs/NKdUt587lPxQcUtgdDUGQ+H6j06rJ9PNDK/9v9rQoTvXM9zztcUNbI+y3LjP62yKDQOjfBOQV3q1br98g8+MOyThsiyoMzw3DoruCIhMJUxdRoz3ft4HiWiedUrx46Ibfa8ie5uzPhTWeHZORsI=,iv:VFGiqLhBi9JrLsLVOAU/YLVhd/DoBbJO27xYIuofiNo=,tag:qCC24xGZRvB6FMqujYlRGw==,type:str]
+  lastmodified: "2024-10-06T13:35:40Z"
+  mac: ENC[AES256_GCM,data:el1o2ari+m4SNxrYmMCdm3xNJ37ditwhedE+ERCcsZdWThgBV7gzg91QrzBduod3r/JnvNDr0r5mPdp6zl53sxNH7RJpN3Xjgd8vsf8Hk+WrnNWu0iGb0MjmnG+v4FLNT0OnhzOF9Fkgtx5EayrmBvKYvnsiFHl9xjfWHVJ6x/c=,iv:P7D0GF8AieL7SWYE5XTfKex+v5AkPdpq5LMSiXdy2DQ=,tag:RStFMSrHIdaj+yXxk35HkQ==,type:str]
   pgp: []
   encrypted_comment_regex: sops:enc
   mac_only_encrypted: true
