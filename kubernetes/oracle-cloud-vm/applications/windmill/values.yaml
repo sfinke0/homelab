@@ -2,20 +2,20 @@ windmill:
   postgresql:
     auth:
       # sops:enc
-      postgresPassword: ENC[AES256_GCM,data:TAtoXh4lSuT7Uet5jnyOyvYF+1dNEOTcMv29c7jFIBKwTV3cs4Ja+Sy+P9wHICL158dPgjFiQxQ/VVRBMN3B6g==,iv:iF9muIE1ujeYPBWIOu5xP2FPDykOv9qer2tuRMvP/k0=,tag:PtDM8NVGQP12r64Cp+tsFg==,type:str]
+      postgresPassword: ENC[AES256_GCM,data:NjtRinNkHq00bQRTPEK0HIh+O+JsZqDEcjlAqi3e52JgGhSTZQaCE4JcgVllqZKhykss0R517qZitFcxicwSaA==,iv:/z8CvCmnMxAbDXG1V474xglM6v/QPaDRULXIm6syhLk=,tag:6w4JadAwXmhEyZVJHQthgg==,type:str]
   windmill:
     # sops:enc
-    databaseUrl: ENC[AES256_GCM,data:TJsA6jIKlFmXNptomYhBQjKvbMGQyzCrn9CUfCvLQQBa7t+9Ht0kw/cq+M5UlTJJs/C8JDWr29Bk34E4Sv+Uhl8uu6v9UoRHS1Pp6uHWYcJgIohxspPXWuHGwfCjZ10XBxXzfmnProyloevpg2l+9/gZGoFz5uCqpYMRdJDC+V22,iv:odXN/RZcbxiTwBQms5iWQct3p+5wc1O0b0BMrXlKAME=,tag:1Wj/9OHoYtSQdMhVPKRGBA==,type:str]
+    databaseUrl: ENC[AES256_GCM,data:aewJWJdnUHDekPo/JvVjeQRxau7Zqx3BLOFBd0Pvx7b+UukvJFBBhjPO4Nc7EJ2wzPaely1GOCYVJ7bthpOrGfSaqvPrH2FHpOSVppdQ6OKjPa9AE+csccaPQTKQqllUhIc5RQEtvpAwLE35s0a+bIh8jluSU96MqvtSeTyzXxmUbWq7VA75,iv:9vHcjaNzbemN46Duhq5CtddYiufUeDqWJeaKL/CI1jk=,tag:pSe3WIqBpwnwFEkkLh6YkA==,type:str]
   ingress:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
     hosts:
       # sops:enc
-      - ENC[AES256_GCM,data:Ry+2xW5Vfoy8LZT2uoaZa8S7aSsd,iv:9cOGGzmcVQKGe4nWu3S+hb79lpl6+fbVWCwGjqG68nU=,tag:5tmHXI71E9jX+Vhp54x9FQ==,type:str]
+      - ENC[AES256_GCM,data:nZslpXxnV6eyK6rQ3g8Gb2iP8cUU,iv:rIHFB24QJEgulaDOC18MEPdkynb+pkskI00fwUKEuBQ=,tag:pD8HesCCAvB+6Mu4A3mqCA==,type:str]
     tls:
       - hosts:
           # sops:enc
-          - ENC[AES256_GCM,data:/RVv9KRD9kITwq6zEFUTy4XpGy0B,iv:6mppvIx0m27QVwdJfPkGo+9HlHptt0s/L6nLjRdCs4Q=,tag:TkZUitUX+8w3ygEsnv7feA==,type:str]
+          - ENC[AES256_GCM,data:Y3RgNk4vdCxEsNqJmbglD3OlEX8A,iv:huLa5HIbidmgyzkSRg4YqJ68EtuNf5xZI/pRd8+FRAo=,tag:eSU+jec3rIeCc6GS3vi9cw==,type:str]
         secretName: windmill-cert
 sops:
   kms: []
@@ -26,14 +26,14 @@ sops:
     - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
       enc: |
         -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBWRkx0QU8yczBoYVZBZDd5
-        eVhna1VsYmsvRUhKQzJYeDRVU2o5bzlwWEhBCmpORHROK0ZPbC9pcU90QzVYanBn
-        dmIwTTZSMWNKQlBJMnRzSlpQOFhZQncKLS0tIHgxd3Fvb3hIS1YzL2xuOXlZOHMw
-        eXp3aTh4SjA1Y2taaWFlMnlta3ZnamsKcRQ8FYnXySliGQHFf87/IU+3oARLSmXo
-        gwccyQ8aG4L2WuAJbocrdtHQyjb4yd3iPl0EAq30YBUkSxlCDOteTw==
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBQZ3EzSlR3QXhiY2RCVm0v
+        NndPOHYwWGs5WVBtVjA3U0MyY2Rhc1JwZlIwClkvcVZqanZLVU1STDlFMkQwUTZW
+        a1B3anQvNk4yQ0x1VitiMDZqVURWS3cKLS0tIFAzODQ5d3RqREJTVmRjUXBPYWFQ
+        UlBIRVJySVdubk9GdU8yL09iUDNVQ1UKWIzHgH3Sc/0DcGm0Etnb7WV5NjNv+erU
+        UFo74a4IoynNumgcJILImNHOSOGJhVhD+9a8k3YU26lZhuIE/SeukQ==
         -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2024-10-06T08:18:36Z"
-  mac: ENC[AES256_GCM,data:N0p1FmSo/uMrup4jGnhr3T0Qp+Z1dAek2kfd4ahrnXL+ZvTgCJBAzbiP8mjqVm1qic97cz5yu+Jo88/7d1muVwh5zr0nPZQ3ek2dI5n2Gp4+/sh9oaXK2yGBnsxwrhQHsZewoOO9noqeTzODj7cCiAe6l+WxZNQT6r4kkp6dEW0=,iv:hXnVJ3lbGf1mhonjWNn9uoFp3qKW6xryhlLHrR1B1jo=,tag:LP8WImfbTNyPJiQSq48dnQ==,type:str]
+  lastmodified: "2024-10-06T08:26:13Z"
+  mac: ENC[AES256_GCM,data:mQ98PWfZtyU7umuP0STWKSRe8BpWszX7DWAXP9NNMk14xEUuzLP4WgAllV7ivMjbRxClQ7k4dxUCf2O7D6+2t+21ljgAtogJYb6UeYE+zuAOpJxQKfPnkIoHbMfMnt2FRlShKFZfEa/bToNBJ8TOnG6/FeMT6xjWpsD76cnEPv0=,iv:Pp+AovHnHhpPSOGKvoiNYcQsIwmUKjuQufQkoqkphZE=,tag:Wot3DI0Cl0seyRFEeZUgsA==,type:str]
   pgp: []
   encrypted_comment_regex: sops:enc
   mac_only_encrypted: true
