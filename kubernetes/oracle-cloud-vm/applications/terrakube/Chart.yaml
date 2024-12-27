@@ -1,0 +1,8 @@
+apiVersion: v2
+name: terrakube
+version: 0.0.1
+
+dependencies: # A list of the chart requirements (optional)
+  - name: terrakube
+    version: 3.24.0
+    repository: https://AzBuilder.github.io/terrakube-helm-chart
