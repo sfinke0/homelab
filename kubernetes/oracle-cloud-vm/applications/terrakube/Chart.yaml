@@ -9,3 +9,6 @@ dependencies: # A list of the chart requirements (optional)
   - name: postgresql
     version: "16.3.4"
     repository: "https://charts.bitnami.com/bitnami"
+  - name: redis
+    version: "20.6.1"
+    repository: "https://charts.bitnami.com/bitnami"
