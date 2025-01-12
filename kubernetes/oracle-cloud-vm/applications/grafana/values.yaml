@@ -1,30 +1,30 @@
 grafana:
   assertNoLeakedSecrets: false
   # sops:enc
-  adminUser: ENC[AES256_GCM,data:P8RwJ0v4t5LcL2mA,iv:REOdPc2i3Gr+8Xff2uTF6VsQUj84179i4Ng7aUp9Smo=,tag:TpEYdl2nc5wufBWbUtCnPA==,type:str]
+  adminUser: ENC[AES256_GCM,data:B2/yET5JY3Sf3c6k,iv:1fho3xZHU8b7Dkt2nmsI/KlLgYDgerkPOKpGwtQ4ZII=,tag:suRHz4M7wzvp79awqz1upw==,type:str]
   # sops:enc
-  adminPassword: ENC[AES256_GCM,data:YV9H3GsUd+McHnfVsWvh6nglF/odGoZ+jV3Mei/HhY0=,iv:i9mlS/ej9zadOsZzoGVTIPDu35oxePoCrqt+tq36Bzw=,tag:RCCLPru7caBB5oArK207oQ==,type:str]
+  adminPassword: ENC[AES256_GCM,data:1hc3nw046cei70vds6yclKhF1uY/q1pfr/fr9LI8mmo=,iv:IcAR0RAslkbWisHQpbTqvSW6vgXI6ETks55QOjjWeUo=,tag:uu8X+9pcRZQUgQitR9jACw==,type:str]
   grafana.ini:
     server:
       # sops:enc
-      domain: ENC[AES256_GCM,data:cG6Iq7tI8BzhwAo1AmzKZnAgNJoRCA==,iv:Fz7KkzVAxi1hggDmBYvk4BSo2+Xl6Ip7xq3PktVrwUA=,tag:fDPb6J1PhEZ1qW8/Z4nkRg==,type:str]
+      domain: ENC[AES256_GCM,data:7+ZSbTy1nxfF6tTl6VnDrqOrG9EPNw==,iv:WQ4GG7hqT51jNt8xCtQcavhKWdDBO6sXTpCjwjNNBdQ=,tag:vLpP/8RyOx7u0m3+7We9Pw==,type:str]
       root_url: https://%(domain)s
     # sops:enc
     auth.google:
-      enabled: ENC[AES256_GCM,data:EDrAyA==,iv:Uuhjjy9JJxTQzEYU02cvZZj54XY8It/iji14AF2pZ6g=,tag:8Loqq2Y8oHoAEleQAifr8g==,type:bool]
-      allow_sign_up: ENC[AES256_GCM,data:t7hSEg==,iv://7T2xINZWpRavGA+A8ePKkCGCpXBhA3x5GjD7Vbm24=,tag:QZ0f3g9BNUv9K3Evb4NoAQ==,type:bool]
-      auto_login: ENC[AES256_GCM,data:vI18KA==,iv:6scNkECW7A13DKlAoSdrDKGRBTJ1BuA7RQcnazCqL1s=,tag:PrRY3gwo07CAzh163Gi6yQ==,type:bool]
-      client_id: ENC[AES256_GCM,data:YtblroxgxoPFSYUMqu5KsU9JJ5vwuC0WxcDRj1OQRwMFVzvDTPKPsbn/Pvw5VQXgn1rh3IlAXhUpfwjGkQHlFb8MK4lcLYEv,iv:0R1U4oara9eZ2y/6k1hrKBSwO4ustA9DKG9HzDLHnL0=,tag:tyRxD6C9pLnULCEuROK9xw==,type:str]
-      client_secret: ENC[AES256_GCM,data:ZFWNn6ZXmHdVs6/OG7cLMO/SeK6axr/Ccklr9itiN6eNgME=,iv:Vhe01HzWyHTkV9V8yUz335HpPhqVNe+h37Q9MLXaNmQ=,tag:rdxUMf94OWDjENqMNE65Dw==,type:str]
-      scopes: ENC[AES256_GCM,data:RRNpjeRfyEEuQNS8Yg5HyNVSqLLQD5aghyn+bunzXhb/Vde0nBULs525MwWgEN7DQChJd0hdsv5omKcYYoho5WOQbf8hfCs5QMjF66cHRc3kV84=,iv:TwKVqExuhXPCXMsvm5M+2CAoOBXa061wGLACKU/B+Y0=,tag:dZ8ZUxKlmpH3J9iWG3MoxQ==,type:str]
-      auth_url: ENC[AES256_GCM,data:hWdqE4qQNrfFGlKyJ3Vr0hlfPpdqT7Y83QYJMev9SEITbrPXgOKnKP1emMo=,iv:TgSXko7OWqJp5H2PsQTZmEp7TGRCGBPX4c29AcGxLbo=,tag:3dgoFx7sEDMCE09C0+xflQ==,type:str]
-      token_url: ENC[AES256_GCM,data:xJf8eHdsToGZInldfhbxnBl73iyeDc6tqG1oHrFKQues8jw=,iv:8/0DtSf7Qnr6e0nlc7FTRgr0YLEteEld3FtKZLi40Hk=,tag:UwMAX/cX1w8LOQ69edgp0A==,type:str]
-      api_url: ENC[AES256_GCM,data:dbceD5eXFdq72H6hi3TCGCMad3+Y/Hx2bsGLU922q6QlCmViiIy05LsuJ52fL+md,iv:GrSgklWPEdlhVeMJ9phbrP5e12IszjlzzSll/xYW6ag=,tag:T/ZZjLGjMqZGvbR5Pgf31w==,type:str]
-      allowed_domains: ENC[AES256_GCM,data:sw/avfsALmxaIjKT,iv:RBYN+EOBSipZH2H72s+8weyIAcEGdOCPzqJ7fpvBcZk=,tag:BZrOXABPmRiCzIpVB8mmCw==,type:str]
+      enabled: ENC[AES256_GCM,data:U7rKYA==,iv:9oZ0vT/rGsH6gG5iG05eZ68hQwPf4biDUXUkHYUoGqE=,tag:BIxfCz6mU0nSEJMO4h9EkQ==,type:bool]
+      allow_sign_up: ENC[AES256_GCM,data:Fot9RQ==,iv:AAxsYIJKcDu8GWxeczNhGnliIvILnGWhyViSl98q/J4=,tag:EsxqAyRRCxHtQMAL+RgHeg==,type:bool]
+      auto_login: ENC[AES256_GCM,data:mhi9gg==,iv:ArWcXyZJK4H3QHKNEJiBsGYv0USNyt5mLJaG42k6IPM=,tag:U2IDdbGnJrdo/vJ1R790Sg==,type:bool]
+      client_id: ENC[AES256_GCM,data:BflauJMmRJz4pguyKnTq8XRI9/FUDpFY3t7lNfLx6kpxAPj84B/CQa00Z/fVyteJxbToLaBSWPziytmpJFasrj3vMNyQCDoY,iv:Nkevwas7Dre1tF605UqfE6Z1IU60zVXncKToO6gXgDM=,tag:WdST+ZTi344eU1z38Y07Vw==,type:str]
+      client_secret: ENC[AES256_GCM,data:eG89dxi85cTssTSaXTI+rORrrmrxzentjnCWeVfK1i2tfpQ=,iv:LzGN7jBLRRqMY4MEFMjpyF9fprDUOdc1y++xYQbgR7k=,tag:y7Oo5UgT1ug3iTzK5b3Q9w==,type:str]
+      scopes: ENC[AES256_GCM,data:FSPdMpkyw8cv2AEa9HI1nSxmYGjRgQYr57XVVy0oY7INnk2yvcH4OL5+gTNI5QVRJ6713WkqDI84gy8Aw3j8HVm/MfMtxypBLtrZETGNcKyRjm4=,iv:gCbsfOtvomozBEX55lH6hMCa+kkVltl+d8Xw8aFAejk=,tag:/o2sU42y3Vr308ZLPJ0qEQ==,type:str]
+      auth_url: ENC[AES256_GCM,data:YEof2S++Uf6Du03YX0yn85VxO1V+VO+zDl6lJe9G4naDaMwVOZY5AXDsJwI=,iv:pDDsiuxKnMtprE3Z817EP6XUOAbE7MxYfREW0rk9WN0=,tag:sLlZfFijl5prV98lKOjLkg==,type:str]
+      token_url: ENC[AES256_GCM,data:uHveCfRCHah+VjTvDgWpzqYwsFz5phkaSC5dGQ4iyIAwz9c=,iv:N0ah455tmY8+V23BQCw/zv4tSn7KZ10pIx/U25u9G9Y=,tag:CDPrEeEuWnTTug1QfdZ1tQ==,type:str]
+      api_url: ENC[AES256_GCM,data:eqz8In6Q5OCvlSGIpHi8ZdffnAqMoMoL8nhrFgO+/gJtxAeNgUQYNXYOzgWVr4EK,iv:bhRo7jjS/HJnptNnxDpsgg4WWtSzXh0ni/rcR5XL/Wg=,tag:nvZNekUFKIZhOytj6NQM6w==,type:str]
+      allowed_domains: ENC[AES256_GCM,data:xZjb9M+vhN11txqd,iv:SId3O/kobzGkMf3Jv2Icjr5m1coz4xjvZxfKS9uisxI=,tag:LSXV9EE6DQ7/+GqoeS/E3Q==,type:str]
       allowed_groups:
-        - ENC[AES256_GCM,data:6cJekSCXEfzD+kyjqMtnJh84jRNuLpcnWqLjEA==,iv:QNdhYg8BmMDABNiFNy0NNylSF0s/KBs2PoA+E5IFzPk=,tag:AgahCceov5JZleczyWqHYg==,type:str]
-      hosted_domain: ENC[AES256_GCM,data:UwmgKE8FaMMs7BY8,iv:3YtK8cISStQuhWgabZwsFf2dmhXecoxblJafMcTafJg=,tag:62ptycSg9Z/noMfdfBlYTQ==,type:str]
-      use_pkce: ENC[AES256_GCM,data:FKfA5g==,iv:IIIUGkAqTy8KkjHKnq6WdKT6TolbygiysrZM6ol59tM=,tag:7Xw7t1i/NLX6Q6lkoVvAyg==,type:bool]
+        - ENC[AES256_GCM,data:tCy3W4ndDZ6dPUXN/w0vTJ/PaZpun4AHlK9E6A==,iv:Y1l2CApfCCMF7vRdeLd0AjDATFUX87cAplvVFkbDHHM=,tag:BinPpBs2dCtTzXHT64zRPQ==,type:str]
+      hosted_domain: ENC[AES256_GCM,data:pdOJPZhs5893netQ,iv:Idt5q2FmHRXnj4Kq5S8pst46oCAoj6Ro6KtaJvTdBck=,tag:sWU24Soi/uWl+ULtlxwTAA==,type:str]
+      use_pkce: ENC[AES256_GCM,data:SvfQ5Q==,iv:is0MxTDYCU/Uqjsf/w7AbUWv4VXakELkftP5PIP2EB8=,tag:s4exbJNGVm7Rn+dys7EK4A==,type:bool]
     users:
       auto_assign_org_role: Admin
   plugins:
@@ -41,11 +41,11 @@ grafana:
       haproxy.org/forwarded-for: "true"
     hosts:
       # sops:enc
-      - ENC[AES256_GCM,data:HN7HS+9ylqWYyTIn+5PFfRnTPYDNXg==,iv:KMbEoRm1Y7NeqK4I9KNcK5GoitmXVuG+5XonDYeVRgg=,tag:MOf98ZPVY/pedkXfOGgxlw==,type:str]
+      - ENC[AES256_GCM,data:Msxcgc6Fly8mQEg1wUsdlBippp//iA==,iv:DtcIBBVg2xTYwvOr79y2h++fqHlLKpEjMNpNAQfSqxI=,tag:fz4A32r107m+47zr9V0x9w==,type:str]
     tls:
       - hosts:
           # sops:enc
-          - ENC[AES256_GCM,data:YNI0OtDJQdHRB1OlidJZJ0ea/7USQw==,iv:wioYI2C8h7W3J7B9O2uwF/1/JEkgLzww6cp9rPRRLO8=,tag:/JsM8Hu+YTS0Wqz/9FGDJg==,type:str]
+          - ENC[AES256_GCM,data:apjB0MkPnht5HLKdg/HM3wkNVS3dZw==,iv:BvU0Lkbbk4kNUuCK0ExJQ2P2RiEoEV+3KoOtRqHuer4=,tag:zEoXt4dmQQgNZ3PYjMYHfg==,type:str]
         secretName: grafana-cert
   # https://github.com/dotdc/grafana-dashboards-kubernetes/tree/master?tab=readme-ov-file#install-with-argocd
   dashboardProviders:
@@ -89,15 +89,15 @@ sops:
     - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
       enc: |
         -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBmN3oraUhBMnN4R094QUxr
-        QXVLcWcrVGZ4Y2FlR3NaYXp4aUR3T1ZGazFRCjR0OEh1c0hSZ0x5Rm5qckQ5Vkha
-        UUYwU2plSHpIT3BsYjJuZGd2VDF6bGsKLS0tIFR1TEo0Zk8zczMxaWxNbFRuVUto
-        Z3c4WmRDUy9mNmF5SEtHYXptMEs2cVkKaGYZcXBi9mU0l5K32P5XeP191TXtF8u6
-        1h5z06F06pUj44D22R6Yn+91lYHcFlU1y08z1nHtIU2mHFC5/NkV9w==
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBOL2FNYU1VY3RtL21JcXRk
+        eHpDY1RWVys4a0svRm9YTVd4UThCRGdWajFjCmZGbVV0UFhUSklGOGNveTZYSzV6
+        emdkU21XTHdlQm9qTk5KY0kvdHVGQkkKLS0tIElUYVgzNUd2MVV3OGlhMGJhcjlH
+        Slk3RUVwY1pNY1cwZ3NCUlZGNTdVMkkKXYczlsmuQp0XwwkV4TC9Y614a7ByGr6i
+        NPxcVaokPXc3mpbD9wgdw1VPHfqt3wmB3DMkleCo9Og966+Z0e7lZQ==
         -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2024-12-31T17:10:22Z"
-  mac: ENC[AES256_GCM,data:WiJLDpY9/LYKWwyXb0bMgpMv4CW+RFs2dJezc8/rFiIaydp7ih17rrSz5sMTNeRrIgdEqlW04MWF5igZlaaJKMFSC5j47dBVdldbyj7hXDZ+BbXKiBcEm14JhmuJ9G7wMWpDD067Hx7cQLGXHKTA10jyI10vBrSSqUYh92zpoEQ=,iv:7KPyquqWsEPO1lv8GnTN7yv6KO6b9XLB5uJj6dEQrAw=,tag:dqWWSiohqLInONvNGmUeUA==,type:str]
+  lastmodified: "2025-01-12T16:42:16Z"
+  mac: ENC[AES256_GCM,data:l4AsT9n+oQB5ee3N3a3FhxHsjsxbk+xrzonII2hYgnNh/IE8s71HPKDajkt925dzVDtB1ELLK+pXwmfluYaxXjp3DtHMzkIG94kHfn4pWNoHBAkDcHd2Jz5AuzsvOMec87DVprE54YemoESnpFQ/LQfFBrevPhyYqPBWxVwAeyE=,iv:jy0yPHlcZwASe7QFFAp+Wp7krMncIBo1gsHo/25finY=,tag:8SXz+ZGCaUbcPyMTZA/nyg==,type:str]
   pgp: []
   encrypted_comment_regex: sops:enc
   mac_only_encrypted: true
-  version: 3.9.2
+  version: 3.9.3
