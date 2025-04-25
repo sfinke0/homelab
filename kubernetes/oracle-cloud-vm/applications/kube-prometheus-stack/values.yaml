@@ -24,39 +24,49 @@ kube-prometheus-stack:
               requests:
                 storage: 40Gi
       additionalScrapeConfigs:
+        - job_name: mailcow
+          scrape_interval: 1m
+          static_configs:
+            # sops:enc
+            - targets:
+                - ENC[AES256_GCM,data:cypTOkrXkxoADW0xK3X22g==,iv:D69/4eaCKUN9B1GiTkVn9FRKThlXdogZF6lHfGzsblA=,tag:4W6muKhc6yR8fNBrvppzBA==,type:str]
+          params:
+            # sops:enc
+            token:
+              - ENC[AES256_GCM,data:IVHqptve5NJFRWNu4bjl3OCrtRIAe1JtnZY8CSfn8s5Yyg==,iv:oaZgN1ExffgzmL9lMb5HMB0ks8VgIhvf08DaeyOF2iQ=,tag:LO8XkVerT9fv+EkqV3eWMw==,type:str]
         - job_name: node-exporter
           scrape_interval: 15s
           static_configs:
             - targets:
                 # sops:enc
-                - ENC[AES256_GCM,data:mK3HBfM9MBvMvNKMpNOGXjALtgFXzJUAf8SmGWlIzy8ChbI=,iv:HBSG9NwB+Z0SvG92g2s+K4iCjMiN6kKosDd+wZMN5vY=,tag:kwWQ0UClzawmPj5O5/YgUw==,type:str]
+                - ENC[AES256_GCM,data:LThTnOMJAIo7hjiZ9k+2gjoPqd0xD6DN81s3k9HZF39bjQ8=,iv:amUwHMWw3f1czfy4TiIXPawJZQfs6wa67sB7j/DY/GE=,tag:hUMHOInxgBC/W8iHGnCIHg==,type:str]
               labels:
                 os: ubuntu
                 type: hardware
             - targets:
                 # sops:enc
-                - ENC[AES256_GCM,data:T7YzrEk/SR/HvCoGA6/eNAI=,iv:z2gRjWeOCjWTiye+uN2HR4AG+RDOqS08rrigMxsVMb0=,tag:ZlJjJ/enxXeeI3o13g/7sg==,type:str]
+                - ENC[AES256_GCM,data:U+fflaFjDhPgveoUno+SXBE=,iv:EhQBbauLVO1JYW9bjhDVZIRSFEiBxBbOsJY7rmujgng=,tag:MhpcMqIErxslYpc/dp1Ruw==,type:str]
               labels:
                 os: vyos
                 type: hardware
                 # sops:enc
-                hostname: ENC[AES256_GCM,data:a2/cpThq7M9o0Zjw49iG+E3/mNe0jKD+BN2BcUCQZ5Rapg==,iv:/Ql2lCb0GNk0G2t+2FRU/g5Ze6OCQ9s1zEtZqVtZ6wc=,tag:j1MM27OAipnRFlY47cKWbg==,type:str]
+                hostname: ENC[AES256_GCM,data:x9hzNbCpH5aXW+/VpmGyhO+QdXWmupzyH/fPQ7kYGhcXkg==,iv:+CM5k+yaVxhI3VUJjNZmqhde6VUjSBuvLkN5Fji7ui8=,tag:CNO6sqPBOXWy57RHnVsK9w==,type:str]
             - targets:
                 # sops:enc
-                - ENC[AES256_GCM,data:k+9bZ/uvrgX5u6Mr/o8M,iv:P4DZO2EXuLOODSKhhjLOl9DcllBBSoQTj8t2SNTfRt8=,tag:MKjuMjK12tyHacb+cH5PnA==,type:str]
+                - ENC[AES256_GCM,data:TJDvqMsqwRD/EcmQWbXf,iv:5r9hHW0IkemSCtbceR+KaoEZtm94/5gxbW0FICjg9Ck=,tag:Hbd7tafN/v4RQZlbUeV65w==,type:str]
               labels:
                 os: vyos
                 type: virtual
                 # sops:enc
-                hostname: ENC[AES256_GCM,data:2KmRX6+W7jeVOg1ir+NnWuS9kjew4N0jCRmy7Edk34EMSQ==,iv:OlLnLiA4j0ue5gDppDoEfvY40LRTQ6QC5VFbrEsXimc=,tag:lpP9GBdpRw93b7brc+dZmw==,type:str]
+                hostname: ENC[AES256_GCM,data:R81c32Sa0jnHyTh9aFSWvymL1S+nnoIrjpwXgb5qhw5CJw==,iv:Dsu02uGkG87AQew9XYrtGdtL2swqYrD0ilMNyBfAqAk=,tag:0ba5Ct26iBdoTA97DeCB+Q==,type:str]
             - targets:
                 # sops:enc
-                - ENC[AES256_GCM,data:5ZGVBABLVpteCoMaZNsmFw==,iv:e1oJnMPJn8a/xYi5BSxSakiAWG7kpVRPwXFl7mkwQQc=,tag:1rn6IKuZBsdJa/PKyCq7eQ==,type:str]
+                - ENC[AES256_GCM,data:LpjTPKisu6GRfPnPCmfW8A==,iv:P7NZnE+mEkcJlb5YC4T4izSLofDnWMS1M/7RKx8vFB4=,tag:3xsgK7k5McLCS/V8pWWKxw==,type:str]
               labels:
                 os: debian
                 type: virtual
                 # sops:enc
-                hostname: ENC[AES256_GCM,data:RxMue5Vo+knkfkjRt+cYdyyUduEj2hM7zaj7qhapqJI=,iv:j3yYrTTXSWw0+dykJFWjbScOUt6uUDcXxvqrBXAuYXY=,tag:nRY+FTkQYwggc9fviYZgoA==,type:str]
+                hostname: ENC[AES256_GCM,data:nX1zrHiRZstRmBRZ1/z5FvEG3U/3hACt3CoYXU6wN00=,iv:ylGdwfFhDZS4LSmmUuvTlurxFZml4SDB3Tb+cIMQTv8=,tag:mQcScHAS0Z+wd9UpHgKuIw==,type:str]
   prometheus-node-exporter:
     extraArgs:
       - --collector.filesystem.mount-points-exclude=^/(dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+|run/.+)($|/)
@@ -68,14 +78,14 @@ sops:
     - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
       enc: |
         -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBHSGxqSTJBaTNBbnRQQ3hW
-        eHh3eTFyQ2RvV0daUUEzYmUrU0NhQzhHQnlZCmQvZ3Q5ZnVLVXEvb2FCelcrMXJ4
-        NUJlRHR2TE96SDhtVnBZRDlTdnM5V00KLS0tIDlGT0tMNWtJL3ltcXIrRmN6MWxM
-        Vk1sVFo1cTRrZUltYlgrZTZxMHA4bDQKF7VmYIwV79VdgCTCxHQXIHAPy7tyJBgg
-        S6+0OC9J0l8E3J80wpGVf/Tu0FZKSyySrvcUl3Q9Ym0VX+YL+0znKw==
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBCK2twckdzWnZFbEtqbHVp
+        YVdwS1dOYXNZcG10TUduTWdpNXd3SkEyVG5FCmZyL3JCVzU4bVgrSXhkRWkvYjRn
+        ckNlSHRJNnYyOXVpdHRNRkErc0VaQlEKLS0tIG9Oem1SbUphRDgxYndlejN6Q2RS
+        L1NzRmVESkNNNkpmdXN0MnhWOFJUWDgKfZgsztspogZvY6BvGFgWofiqM2cD0IkA
+        tCmQJXvm6j9JtbtpN3khR1afY9m2S9bgS67BXjNzssvCTW0ALmYb6Q==
         -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2025-04-25T20:26:11Z"
-  mac: ENC[AES256_GCM,data:RQ7mV/NKU8L1dA5ZePAq5B8l+XVALEwc/u6IjA05jQEXXRgTFgdZQS5puilBHpx67CHTxVWcOSg3UX7o91X1Bp4pCaDSTvwznC7Nhf7pE8A4PKXFhSjc6iQf/pGjhHAMFxlOJjXXLtXjPSXEDY3/FrcT6F9375nXzfIkicbgBh8=,iv:8DVtsst5hST81a3QUU9sBr4jS4DPORHDdD1+tIO+C+Y=,tag:iufq5HLbNw8izh2YIWnQYg==,type:str]
+  lastmodified: "2025-04-25T20:37:22Z"
+  mac: ENC[AES256_GCM,data:UuWxwdSBgg7srCylr1KKsMZnqKKQsIYTJxn5zxJ2kEKZyUINYIPI1dmCh+6NOlghxpdXXksSH98TlMJf6XzXmvldMPJwHpZ2ma5p3OzhdUNTxcg9VW7wTjbH49OzuRiJOdGXXlGyEwib8bb2MkMmJlDi1/yv0m9yNUMYmKP7Lyo=,iv:zFJ8Csl+iowhd34yZ8U1yiIf2nvthajps8op49tA9FU=,tag:0FWnygYRxSuLVAm5x/MA4A==,type:str]
   encrypted_comment_regex: sops:enc
   mac_only_encrypted: true
   version: 3.10.1
