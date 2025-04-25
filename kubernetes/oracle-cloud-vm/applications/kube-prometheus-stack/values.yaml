@@ -29,26 +29,34 @@ kube-prometheus-stack:
           static_configs:
             - targets:
                 # sops:enc
-                - ENC[AES256_GCM,data:A03XIuppsOmX+9NZ7BcJ65TRSPVmVM0LTDKWn1z6Qu6xw0g=,iv:/ddV1ZM29IqDSkwTLS72e38XJeVPkfkc6aSKZinZ8rQ=,tag:GKq6ku6cwU2faixVotatfQ==,type:str]
+                - ENC[AES256_GCM,data:mK3HBfM9MBvMvNKMpNOGXjALtgFXzJUAf8SmGWlIzy8ChbI=,iv:HBSG9NwB+Z0SvG92g2s+K4iCjMiN6kKosDd+wZMN5vY=,tag:kwWQ0UClzawmPj5O5/YgUw==,type:str]
               labels:
                 os: ubuntu
                 type: hardware
             - targets:
                 # sops:enc
-                - ENC[AES256_GCM,data:UTggptuppyVFu9+6S20EwdQ=,iv:VQG2S85erAyWxPhb/4fGmT0ykLYYnP3/gIsArgJ/1t4=,tag:TFZswn2ULNiBURqx/Wrc5w==,type:str]
+                - ENC[AES256_GCM,data:T7YzrEk/SR/HvCoGA6/eNAI=,iv:z2gRjWeOCjWTiye+uN2HR4AG+RDOqS08rrigMxsVMb0=,tag:ZlJjJ/enxXeeI3o13g/7sg==,type:str]
               labels:
                 os: vyos
                 type: hardware
                 # sops:enc
-                hostname: ENC[AES256_GCM,data:dK8Uoi+okIDLZMalacac8b4LoRxdxZxBSr+p0FQkips7uQ==,iv:nsQj0bhoIC1a6SpTyWvAqDOkfMNmjJnW5Hb1aVrrFlI=,tag:ruJyDriQgkvkHr9LBT1TtA==,type:str]
+                hostname: ENC[AES256_GCM,data:a2/cpThq7M9o0Zjw49iG+E3/mNe0jKD+BN2BcUCQZ5Rapg==,iv:/Ql2lCb0GNk0G2t+2FRU/g5Ze6OCQ9s1zEtZqVtZ6wc=,tag:j1MM27OAipnRFlY47cKWbg==,type:str]
             - targets:
                 # sops:enc
-                - ENC[AES256_GCM,data:DSsqriT2M68g7wfu85sf,iv:g7/fM8ipP1veKls7DllzAn13LGEYwHqoLMNSkqVFpFM=,tag:ffVYLyIOxkTF9SmLWCZPXQ==,type:str]
+                - ENC[AES256_GCM,data:k+9bZ/uvrgX5u6Mr/o8M,iv:P4DZO2EXuLOODSKhhjLOl9DcllBBSoQTj8t2SNTfRt8=,tag:MKjuMjK12tyHacb+cH5PnA==,type:str]
               labels:
                 os: vyos
                 type: virtual
                 # sops:enc
-                hostname: ENC[AES256_GCM,data:/S3/O8XOhVXL+JjJjUXHgex1iav0rtfaOzOoMeHhYuvolw==,iv:PaPcAxR7O3UMWujProV132Q8KxSuz7Psijx/asSS6/s=,tag:zkYzUkJaxJOtXmIoD6EPQw==,type:str]
+                hostname: ENC[AES256_GCM,data:2KmRX6+W7jeVOg1ir+NnWuS9kjew4N0jCRmy7Edk34EMSQ==,iv:OlLnLiA4j0ue5gDppDoEfvY40LRTQ6QC5VFbrEsXimc=,tag:lpP9GBdpRw93b7brc+dZmw==,type:str]
+            - targets:
+                # sops:enc
+                - ENC[AES256_GCM,data:5ZGVBABLVpteCoMaZNsmFw==,iv:e1oJnMPJn8a/xYi5BSxSakiAWG7kpVRPwXFl7mkwQQc=,tag:1rn6IKuZBsdJa/PKyCq7eQ==,type:str]
+              labels:
+                os: debian
+                type: virtual
+                # sops:enc
+                hostname: ENC[AES256_GCM,data:RxMue5Vo+knkfkjRt+cYdyyUduEj2hM7zaj7qhapqJI=,iv:j3yYrTTXSWw0+dykJFWjbScOUt6uUDcXxvqrBXAuYXY=,tag:nRY+FTkQYwggc9fviYZgoA==,type:str]
   prometheus-node-exporter:
     extraArgs:
       - --collector.filesystem.mount-points-exclude=^/(dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+|run/.+)($|/)
@@ -56,23 +64,18 @@ kube-prometheus-stack:
       - --collector.netdev.device-exclude=^(lxc.+)$
       - --no-collector.arp
 sops:
-  kms: []
-  gcp_kms: []
-  azure_kv: []
-  hc_vault: []
   age:
     - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
       enc: |
         -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAwREVtU1FMT1ZuS0Vucml6
-        YjR2Q3F5aDdlQWRQVktLaW4vSXp4b0Rva2pzCk9MR0FVVFRwRzhIdEJFa29lazNy
-        VEhCWVdkL0hKTnF5NThIVlpBRnlrS3cKLS0tIDNNTmRrUlRmb2tWM2JubFNYUG5t
-        b3lwRG9QT3d4N1haSFl5aW1vb3pqY3MKKXyYXBr9AuRYyQzt71ItemSXAbekAPkP
-        eKSsQn6dAXWiGBVnBQ7/FGiqAkSJLpiZTb/+70mwni1tM4rm4a4zIw==
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBHSGxqSTJBaTNBbnRQQ3hW
+        eHh3eTFyQ2RvV0daUUEzYmUrU0NhQzhHQnlZCmQvZ3Q5ZnVLVXEvb2FCelcrMXJ4
+        NUJlRHR2TE96SDhtVnBZRDlTdnM5V00KLS0tIDlGT0tMNWtJL3ltcXIrRmN6MWxM
+        Vk1sVFo1cTRrZUltYlgrZTZxMHA4bDQKF7VmYIwV79VdgCTCxHQXIHAPy7tyJBgg
+        S6+0OC9J0l8E3J80wpGVf/Tu0FZKSyySrvcUl3Q9Ym0VX+YL+0znKw==
         -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2024-08-09T22:39:13Z"
-  mac: ENC[AES256_GCM,data:UwtJuGY/L+JQGHVsLk/Ruu5SWmI3Wn9jtok9ucaLiPYk8l+QMq0lmFvvkKGR7v3VY22L763A8slnHah1/QrmnnXUp/i3997V8O4+uDamm9xtAzKBgZak8CpGtIYgwrX0pW4EFL37yIdlsC37yK95iz+QRoOnce3e6j2izxARDg8=,iv:oUyzztewyjK3g33SBAjv7P/eru5ToCw9nRxVkl78LE8=,tag:6Y1Nb6shxdZ2teIOgGlDqg==,type:str]
-  pgp: []
+  lastmodified: "2025-04-25T20:26:11Z"
+  mac: ENC[AES256_GCM,data:RQ7mV/NKU8L1dA5ZePAq5B8l+XVALEwc/u6IjA05jQEXXRgTFgdZQS5puilBHpx67CHTxVWcOSg3UX7o91X1Bp4pCaDSTvwznC7Nhf7pE8A4PKXFhSjc6iQf/pGjhHAMFxlOJjXXLtXjPSXEDY3/FrcT6F9375nXzfIkicbgBh8=,iv:8DVtsst5hST81a3QUU9sBr4jS4DPORHDdD1+tIO+C+Y=,tag:iufq5HLbNw8izh2YIWnQYg==,type:str]
   encrypted_comment_regex: sops:enc
   mac_only_encrypted: true
-  version: 3.9.0
+  version: 3.10.1
