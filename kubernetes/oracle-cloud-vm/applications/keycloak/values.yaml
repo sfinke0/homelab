@@ -1,20 +1,23 @@
 keycloak:
+  image:
+    repository: bitnamilegacy/keycloak
+    tag: 26.3.3-debian-12-r0
   production: true
   proxyHeaders: forwarded
   ingress:
     enabled: true
     tls: true
     # sops:enc
-    hostname: ENC[AES256_GCM,data:/QMiEbMfd+5tOeEkqt9KwapC,iv:KIArwGppnq0AGVJkBbJIhBIOIEwLjuTBQKyE57zD0bw=,tag:sjolYhwMr2N9K/k0Ae3vwg==,type:str]
+    hostname: ENC[AES256_GCM,data:nbCsgk69E5NIuPbeE14R564t,iv:2HkfQ9pfMTY3ZcMP2/M0AewQL0tIXBc+XGjvZbUX/jo=,tag:w5f00KlISRhavVS0hHec9w==,type:str]
     extraHosts:
       # sops:enc
-      - name: ENC[AES256_GCM,data:luii9AG0Yg5rzk2/OK8=,iv:wObEOORKy8LOxRmYR64kdzFoDXkNy4ndFig2ASBic7Y=,tag:iUpJ1KKQcHcvuze69FKGeg==,type:str]
-        path: ENC[AES256_GCM,data:8Q==,iv:F7XN5BvWf6RGr68pK+xGOIFHmJczs+FAaPzIdoL1vwI=,tag:tKmtdJFvpShr9uFmWJKH8g==,type:str]
+      - name: ENC[AES256_GCM,data:0iWmLTakblTdyyKXRSk=,iv:oj7iZj+VwvP9tJEtYc2RcFeDJ+lg9PwoLenMSeeq4b8=,tag:3KeNx/Grqnt/Ig2TuTFPBw==,type:str]
+        path: ENC[AES256_GCM,data:5w==,iv:Zbwtub0SOapFm0zm33VAEkxkz4MgMVOs1v2b2Dfp+u8=,tag:HZaRvCsRHFN3VV7gAuADWA==,type:str]
     extraTls:
       # sops:enc
       - hosts:
-          - ENC[AES256_GCM,data:zlhjos+Zob7zS/K//UE=,iv:8aVdedfHgdvzPAd4oGbN/rUJqP3nfzEsLW3FwXVL8X8=,tag:K6TQ6aIgxaD5mLxEWtoZ/g==,type:str]
-        secretName: ENC[AES256_GCM,data:vvLHE/iHLz0NbvGsGJ1tkNPD,iv:EN9sGow6dr66Gzq96b2i+A2NFAD22AU5KDeEOBqVDbM=,tag:bGA/XEu5q4a/6bfwESpYmQ==,type:str]
+          - ENC[AES256_GCM,data:FXm6kAPJRaC0/vnc0LE=,iv:bVgD2K+uvBIvF2C9fhoX63l6gSHTAyeoLDxMq0ZiUsU=,tag:Qw+VGU60HFU8MgN50B2Zzw==,type:str]
+        secretName: ENC[AES256_GCM,data:M/OCAMUh8lNbVJS0crSOGJbu,iv:5AlS6jLmxIx1g56RmpHVSOIH6XR8zsVtaaeWlEm3jL8=,tag:ojnpxvFaU8Xu4ouWm0ibtQ==,type:str]
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
       haproxy.org/backend-config-snippet: option forwarded
@@ -22,7 +25,7 @@ keycloak:
     enabled: true
     tls: true
     # sops:enc
-    hostname: ENC[AES256_GCM,data:VXLFZpdJrT7v8U5QYghMBeTV11On5pHr,iv:jK6BkRrzsiVL1nMpi76n5W0nP2hxp/48HKtp9rJj9nM=,tag:TpnVnZgw9HjyJhZZbFdgRw==,type:str]
+    hostname: ENC[AES256_GCM,data:nQZYpiSPn57kZcfLeUy20DpomcykqpuR,iv:mf3UAZY76zVsTWgHU7JVLmCPZL44h/BH1yH3JdS4ZBM=,tag:wBzpgAjBpsAPRYvF2rXGSg==,type:str]
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
       haproxy.org/backend-config-snippet: option forwarded
@@ -33,12 +36,12 @@ keycloak:
   auth:
     adminUser: admin
     # sops:enc
-    adminPassword: ENC[AES256_GCM,data:PXddFUDivNrkCAI1nHW/0KWehHGetjDzDLXqTDDXUQfSRea+zOdMnE4IBdWMifuH2d2LUnM6OZWt1PtrW09k4Uk00hHHBzRjgnLHUn8K+HOqwjEnx0LmbBmBaXxmb28hGxOj9S73lY4XITFq5WiRnxsfkah9XXMng03dvGNFvBY=,iv:OlY0glTMHBfNYL+xokDhhDl4zDBGbH8wUA+QM1GDG4E=,tag:d30YHODNh7QbYZBT9FzpNA==,type:str]
+    adminPassword: ENC[AES256_GCM,data:pOMN+J7MZUNBPgD+4jXdVmuTqW3kb/pKXrZgoxIbwOFD2VZ1UndSatVR/qTjYbGvTFSEre4kvpXqr68dVCLoxubhxOG8d6dloGBvprB/spUfUPXXt7XScK/5hIhTDCNVjWB11dHDwsG6jLuG9yRnVhh3xMM4lG3ZBXN70K1zshA=,iv:HF7I03XXx58hlK7x1oyq3IYY2SRopO2M0M3eXo1isyI=,tag:Bq0uQDYNq8LNn3c8pQn3VA==,type:str]
   postgresql:
     # sops:enc
     auth:
-      postgresPassword: ENC[AES256_GCM,data:bdnm5/vmJHdY4g==,iv:A1aStDkiz7Csnim3B7bbdGI4inqR/jxPtjuvwlU6lfE=,tag:QAhKj8YgqWeALUVH6Y5+sQ==,type:str]
-      password: ENC[AES256_GCM,data:WubS6rn7kvS5TA==,iv:4zZDHkL/vysbGxMl2M02os8fAS0lDutahvW/t27F2yY=,tag:VzituJr3BHCWiQj/1JkvXw==,type:str]
+      postgresPassword: ENC[AES256_GCM,data:wImnbtAcXhaywg==,iv:yGoBOjQ+cMI94XC6vT0koFzCELxDLQqPBaMfZVNUUOo=,tag:k1345ZtVLB0p73JsaT3ImQ==,type:str]
+      password: ENC[AES256_GCM,data:GxU7iI6fLFm7ag==,iv:pBwwRMQRWlgKpj7btbCKgWp/EapYP8DUazK/6K/9Fn8=,tag:yejKyLWKetOYymcnFnYyJA==,type:str]
     image:
       repository: bitnamilegacy/postgresql
       tag: 16.6.0-debian-12-r2
@@ -47,14 +50,14 @@ sops:
     - recipient: age18xjyppfrwl82jdltqtjxy8n86qlee24h5tftpgrjzp7r9pn5ecmss4pd7k
       enc: |
         -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBGYVVTQ0MwMXE5RjVwNFBR
-        eGNuUFFTNWt2Z2pYK3QwbGVVL0t2UVhJNXc4Cmx5QnA2YWxLVGIrN3U5MXdNTm82
-        UmZqQm43SHU2TW1UL2lsclpCUGt5dWsKLS0tIEVzaXhSMGhCWnlYQVNmaG1jdW1Z
-        S3hjd2t4UjFOVEg1bWZIZFB4R1UzMUUKF0cMX/mzaZY0m0Gs09PV2FzDIQbiuFcl
-        fIxcB5L9VJ0rZPWlBkkDal5b+IdqGE5JfC+jAZsyGYP80V3epZIloQ==
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBPc05BT2VvNTJIKyt5ZUNm
+        TEJ0QTB1ZFhlWTZvczdFYnRlY0tJaHBRR0VBCnBKa29FYlNwVkdrZ0ZNMDFRK2lr
+        eXM1Nnl5VDV4ZnN0WlBELy8vRjNhRTAKLS0tIFRNOW9kbEV3UGpTT1h5UjV3Zm5N
+        QjJhRmxjVllDV2l2VVludy9DR3gxM0UKad00NPN6k66I+6XhR+v3TuhkdDDjhJTH
+        GRJtBR/lJVFrOoCmODsVhK9YPk8EBGpo6WQ4xfSPeM9MOqLgR8ZY5g==
         -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2025-12-11T21:26:01Z"
-  mac: ENC[AES256_GCM,data:a5wyQHcEP252Ue7nzekRaVoEL7QLvjpTewZilMs8Y2VsJsmt1ByuQ01ZOvZzzl+s/xPcvS9ckJ//+BMUy27OQR3BL2Eovwx1MMP2tglfmkmJTuOeSP7nM1FNZuJxnStMtamPb0tCo/L2EJDsDBdxeNQK9e7lmwxalcb0iZmBxR8=,iv:yFqGrFfOmSH5vI2Q8AleiDe3G0nkZDfwiOs1oYWH2fk=,tag:xHZF5JkIuMDVovjbZZs0lg==,type:str]
+  lastmodified: "2025-12-11T21:28:16Z"
+  mac: ENC[AES256_GCM,data:siCgKcRNgSd4lBp+CM5UnsbQ9XVXUQNU5pxSCj1ba+Gu1dARZELX/qeLr9O+0574eYIEtPbO6yHBLNI0MASZGdN+4SaJ7Kg6aQCXIxV9B3GIEWZx8CYHVCpC7nydVi5tRPtncYY6WD6vNwIKQqJOvh+UURMqJxKnyZAtIfc/eYs=,iv:i1qFu5eromz5ot6Oa9FQRp9xZ/Vv8YrID2/rmsxvKMM=,tag:3gYRy1e79V9a2Z52SJwisQ==,type:str]
   encrypted_comment_regex: sops:enc
   mac_only_encrypted: true
   version: 3.11.0
