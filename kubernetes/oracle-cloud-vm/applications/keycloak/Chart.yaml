@@ -4,5 +4,5 @@ version: 0.0.1
 
 dependencies: # A list of the chart requirements (optional)
   - name: keycloak
-    version: 22.1.0
+    version: 25.2.0
     repository: https://charts.bitnami.com/bitnami
